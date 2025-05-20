@@ -9,8 +9,8 @@ public class Empleado_Controller {
         return dao.obtenerTodos();
     }
     
-    public void agregarEmpleados(String nombre, String apellido, String puesto, Double salario, java.sql.Date fecha_ingreso, boolean estado) throws SQLException{
-        Empleado_Model emp = new Empleado_Model(0, nombre, apellido, puesto, salario, fecha_ingreso, estado);
+    public void agregarEmpleado(String nombre, String apellido, String puesto, Double salario, java.sql.Date fecha_ingreso, boolean estado) throws SQLException{
+        Empleado_Model emp = new Empleado_Model(nombre, apellido, puesto, salario, fecha_ingreso, estado);
         dao.guardar(emp);
     }
     
