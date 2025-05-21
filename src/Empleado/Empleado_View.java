@@ -18,21 +18,21 @@ public class Empleado_View extends javax.swing.JFrame {
         setTitle("Gestión de Empleados");
         initComponents();
         btnAdd.setIcon(new ImageIcon("C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\Icono Mas.png"));
-//        btnAdd.setIcon(new ImageIcon(""));
-//        btnAdd.setIcon(new ImageIcon(""));
-//        btnAdd.setIcon(new ImageIcon(""));
+//        btnAdd.setIcon(new ImageIcon("D:\Usuario\Desktop\PABLITO\UMG\Progra\Imagenes\Mas.png"));
+//        btnAdd.setIcon(new ImageIcon("E:\\Pablo_Bailey_Lenovo\\Documents\\UMG\\2do Año\\Progra I\\Proyecto Restaurante\\Icono Mas.png"));
+//        btnAdd.setIcon(new ImageIcon("C:\Users\Carmen y Vanessa\Desktop\Íconos\Icono Mas.png"));
         btnCheck.setIcon(new ImageIcon("C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\Icono Lupa.png"));
-//        btnCheck.setIcon(new ImageIcon(""));
-//        btnCheck.setIcon(new ImageIcon(""));
-//        btnCheck.setIcon(new ImageIcon(""));
+//        btnCheck.setIcon(new ImageIcon("D:\Usuario\Desktop\PABLITO\UMG\Progra\Imagenes\Lupa.png"));
+//        btnCheck.setIcon(new ImageIcon("E:\\Pablo_Bailey_Lenovo\\Documents\\UMG\\2do Año\\Progra I\\Proyecto Restaurante\\Icono Lupa.png"));
+//        btnCheck.setIcon(new ImageIcon("C:\Users\Carmen y Vanessa\Desktop\Íconos\Icono Lupa.png"));
         btnUpdate.setIcon(new ImageIcon("C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\Icono Lapiz.png"));
-//        btnUpdate.setIcon(new ImageIcon(""));
-//        btnUpdate.setIcon(new ImageIcon(""));
-//        btnUpdate.setIcon(new ImageIcon(""));
+//        btnUpdate.setIcon(new ImageIcon("D:\Usuario\Desktop\PABLITO\UMG\Progra\Imagenes\Lapiz.png"));
+//        btnUpdate.setIcon(new ImageIcon("E:\\Pablo_Bailey_Lenovo\\Documents\\UMG\\2do Año\\Progra I\\Proyecto Restaurante\\Icono Lapiz.png"));
+//        btnUpdate.setIcon(new ImageIcon("C:\Users\Carmen y Vanessa\Desktop\Íconos\Icono Lapiz.png"));
         btnClean.setIcon(new ImageIcon("C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\Icono Borrador.png"));
-//        btnClean.setIcon(new ImageIcon(""));
-//        btnClean.setIcon(new ImageIcon(""));
-//        btnClean.setIcon(new ImageIcon(""));
+//        btnClean.setIcon(new ImageIcon("D:\Usuario\Desktop\PABLITO\UMG\Progra\Imagenes\Borrador.png"));
+//        btnClean.setIcon(new ImageIcon("E:\\Pablo_Bailey_Lenovo\\Documents\\UMG\\2do Año\\Progra I\\Proyecto Restaurante\\Icono Borrador.png"));
+//        btnClean.setIcon(new ImageIcon("C:\Users\Carmen y Vanessa\Desktop\Íconos\Icono Borrador.png"));
     }
 
     /**
