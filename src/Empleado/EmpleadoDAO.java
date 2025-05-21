@@ -44,8 +44,8 @@ public class EmpleadoDAO {
             ResultSet rs = stmt.executeQuery();
             
             while (rs.next()){
-                rs.getString("nombre");
-                rs.getString("apellido");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
                 rs.getString("puesto");
                 rs.getDouble("salario");
                 rs.getDate("fecha_ingreso");

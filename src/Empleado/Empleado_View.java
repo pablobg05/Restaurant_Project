@@ -298,8 +298,12 @@ public class Empleado_View extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
-        int id = Integer.parseInt(txtID.getName());
-        controller.obtenerEmpleado(id);
+        try {
+            int id = Integer.parseInt(txtID.getName());
+            controller.obtenerEmpleado(id);
+        } catch (SQLException ex) {
+            Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnCheckActionPerformed
 
     /**

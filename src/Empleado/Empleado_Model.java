@@ -43,6 +43,10 @@ public class Empleado_Model {
         this.estado = estado;
     }
 
+    public Empleado_Model(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
