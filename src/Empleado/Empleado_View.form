@@ -260,6 +260,9 @@
               <Color blue="ff" green="e8" red="d2" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCheck">
           <Properties>
@@ -267,6 +270,9 @@
               <Color blue="ff" green="e8" red="d2" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCheckActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnClean">
           <Properties>

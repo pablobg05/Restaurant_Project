@@ -33,6 +33,30 @@ public class EmpleadoDAO {
         return lista;
     }
     
+    public boolean obtenerUno(Empleado_Model emp) throws SQLException{
+        String sql = "SELECT * FROM empleados WHERE id = ?";
+        
+        try(Connection conn = connFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setInt(1, emp.getId());
+                
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                rs.getString("nombre");
+                rs.getString("apellido");
+                rs.getString("puesto");
+                rs.getDouble("salario");
+                rs.getDate("fecha_ingreso");
+                rs.getBoolean("estado");
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
     public boolean guardar(Empleado_Model emp) throws SQLException{
         String sql = "INSERT INTO empleados(nombre, apellido, puesto, salario, fecha_ingreso) VALUES(?,?,?,?,?)";
         

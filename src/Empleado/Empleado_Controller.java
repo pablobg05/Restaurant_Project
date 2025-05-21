@@ -9,6 +9,11 @@ public class Empleado_Controller {
         return dao.obtenerTodos();
     }
     
+    public void obtenerEmpleado(int id){
+        Empleado_Model emp = new Empleado_Model(id);
+        return dao.obtenerUno();
+    }
+    
     public void agregarEmpleado(String nombre, String apellido, String puesto, Double salario, java.sql.Date fecha_ingreso, boolean estado) throws SQLException{
         Empleado_Model emp = new Empleado_Model(nombre, apellido, puesto, salario, fecha_ingreso, estado);
         dao.guardar(emp);

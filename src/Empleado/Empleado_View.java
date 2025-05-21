@@ -110,8 +110,18 @@ public class Empleado_View extends javax.swing.JFrame {
         });
 
         btnUpdate.setBackground(new java.awt.Color(210, 232, 255));
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnCheck.setBackground(new java.awt.Color(210, 232, 255));
+        btnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckActionPerformed(evt);
+            }
+        });
 
         btnClean.setBackground(new java.awt.Color(210, 232, 255));
 
@@ -211,9 +221,7 @@ public class Empleado_View extends javax.swing.JFrame {
                     .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(7, 7, 7))
+                    .addComponent(jLabel6)
                     .addComponent(dcStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,11 +258,11 @@ public class Empleado_View extends javax.swing.JFrame {
             Double salario = Double.valueOf(txtSalary.getName());
             Date date = dcStart.getDate();
             java.sql.Date fecha_ingreso = new java.sql.Date(date.getTime());
-            String status = cbStatus.getName();
+            int status = cbStatus.getSelectedIndex();
             boolean estado = true;
-            if(status.equals(1)){
+            if(status == 1){
                 estado = true;
-            } else if(status.equals(2)) {
+            } else if(status == 2) {
                 estado = false;
             }
             controller.agregarEmpleado(nombre, apellido, puesto, salario, fecha_ingreso, estado);
@@ -266,6 +274,33 @@ public class Empleado_View extends javax.swing.JFrame {
     private void txtChargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtChargeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtChargeActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        int id = Integer.parseInt(txtID.getName());
+        String nombre = txtName.getName();
+        String apellido = txtLN.getName();
+        String puesto = txtCharge.getName();
+        Double salario = Double.valueOf(txtSalary.getName());
+        Date date = dcStart.getDate();
+        java.sql.Date fecha_ingreso = new java.sql.Date(date.getTime());
+        int status = cbStatus.getSelectedIndex();
+        boolean estado = true;
+        if(status == 1){
+            estado = true;
+        } else if(status == 2) {
+            estado = false;
+        }
+        try {
+            controller.actualizarEmpleado(id, nombre, apellido, puesto, salario, fecha_ingreso, estado);
+        } catch (SQLException ex) {
+            Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
+        int id = Integer.parseInt(txtID.getName());
+        controller.obtenerEmpleado(id);
+    }//GEN-LAST:event_btnCheckActionPerformed
 
     /**
      * @param args the command line arguments
