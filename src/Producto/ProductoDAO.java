@@ -42,9 +42,11 @@ public class ProductoDAO {
         return lista;
     }
     
-    public Producto_Model obtenerUno(Producto_Model prod){
+    public Producto_Model obtenerUno(int id){
+        Producto_Model prd = new Producto_Model();
+        
         try {
-            int id = prod.getId();
+             
 //            query = "select * from producto where id= ?";
             query = "select * from public.producto where id= ?";
             con = config.getConnection();
@@ -52,8 +54,8 @@ public class ProductoDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             
-            Producto_Model prd = null;
             while (rs.next()){
+                prd.setId(rs.getInt(1));
                 prd.setMarca(rs.getString(2));
                 prd.setProducto(rs.getString(3));
                 prd.setPrecio(rs.getInt(4));
@@ -61,15 +63,15 @@ public class ProductoDAO {
                 prd.setStock(rs.getInt(6));
                 prd.setCompras(rs.getInt(7));
             }
-            
+            rs.close();
             ps.close();
             con.close();
-            rs.close();
+            
             return prd;
         } catch (SQLException ex) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
-        return null;
+        return prd;
     }
     
     public boolean guardar (Producto_Model prd){

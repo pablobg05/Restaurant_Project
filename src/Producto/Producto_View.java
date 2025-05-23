@@ -206,22 +206,21 @@ public class Producto_View extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try{
             int id = Integer.parseInt(txtId.getText());
-            controller.obtener1Producto(id);
+            Producto_Model prodtemp =  controller.getProductoById(id);
+            
+            txtMarca.setText(prodtemp.getMarca());
+            txtProducto.setText(prodtemp.getProducto());
+            String price = String.valueOf(prodtemp.getPrecio());
+            txtPrecio.setText(price);
+            txtDescripcion.setText(prodtemp.getDescripcion());
+            String cant = String.valueOf(prodtemp.getStock());
+            txtStock.setText(cant);
+            String sells = String.valueOf(prodtemp.getCompras());
+            txtCompras.setText(sells);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
-    public void mostrar(Producto_Model prd){
-        txtMarca.setText(prd.getMarca());
-        txtProducto.setText(prd.getProducto());
-        String price = String.valueOf(prd.getPrecio());
-        txtPrecio.setText(price);
-        txtDescripcion.setText(prd.getDescripcion());
-        String cant = String.valueOf(prd.getStock());
-        txtStock.setText(cant);
-        String sells = String.valueOf(prd.getCompras());
-        txtCompras.setText(sells);
-    }
     /**
      * @param args the command line arguments
      */
