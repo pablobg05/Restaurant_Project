@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Producto_Controller {
     private final ProductoDAO dao = new ProductoDAO();
+    private final Producto_View view = new Producto_View();
     
     public List<Producto_Model> obtenerProductos() throws SQLException{
         return dao.obtenerTodos();
@@ -12,7 +13,9 @@ public class Producto_Controller {
     
     public void obtener1Producto(int id) throws SQLException{
         Producto_Model prd = new Producto_Model(id);
-        dao.obtenerUno(prd);
+        Producto_Model producto = dao.obtenerUno(prd);
+        view.mostrar(producto);
+        
     }
     
     public void ingresarProducto (String marca, String producto, double precio, String descripcion) throws SQLException{

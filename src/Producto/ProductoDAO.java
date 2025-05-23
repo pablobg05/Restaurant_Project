@@ -42,37 +42,40 @@ public class ProductoDAO {
         return lista;
     }
     
-    public boolean obtenerUno(Producto_Model prd){
+    public Producto_Model obtenerUno(Producto_Model prod){
         try {
-            int id = prd.getId();
-            query = "select * from producto where id= ?";
+            int id = prod.getId();
+//            query = "select * from producto where id= ?";
+            query = "select * from public.producto where id= ?";
             con = config.getConnection();
             ps = con.prepareStatement(query);
             ps.setInt(1, id);
             rs = ps.executeQuery();
-  
+            
+            Producto_Model prd = null;
             while (rs.next()){
-                rs.getString("marca");
-                rs.getString("producto");
-                rs.getDouble("precio");
-                rs.getString("descripcion");
-                rs.getInt("stock");
-                rs.getInt("compras");
+                prd.setMarca(rs.getString(2));
+                prd.setProducto(rs.getString(3));
+                prd.setPrecio(rs.getInt(4));
+                prd.setDescripcion(rs.getString(5));
+                prd.setStock(rs.getInt(6));
+                prd.setCompras(rs.getInt(7));
             }
             
             ps.close();
             con.close();
             rs.close();
-            return true;
+            return prd;
         } catch (SQLException ex) {
             Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return false;
+        return null;
     }
     
     public boolean guardar (Producto_Model prd){
         try {
-            query = "insert into producto (marca, producto, precio, descripcion) values (?,?,?,?);";
+//            query = "insert into producto (marca, producto, precio, descripcion) values (?,?,?,?);";
+            query = "insert into public.producto (marca, producto, precio, descripcion) values (?,?,?,?);";
             con = config.getConnection();
             ps = con.prepareStatement(query);
             
@@ -93,7 +96,8 @@ public class ProductoDAO {
     
     public boolean actualiarStock (Producto_Model prd){
         try {
-            query = "update producto set stock = ? where id = ?;";
+//            query = "update producto set stock = ? where id = ?;";
+            query = "update public.producto set stock = ? where id = ?;";
             con = config.getConnection();
             ps = con.prepareStatement(query);
             
@@ -114,7 +118,8 @@ public class ProductoDAO {
     public boolean compras (Producto_Model prd, int cantidad){
         try {      
             if ((prd.getStock()-cantidad)>=0){
-                query = "update producto set stock = ? compras = ? where id = ?;";
+//                query = "update producto set stock = ? compras = ? where id = ?;";
+                query = "update public.producto set stock = ? compras = ? where id = ?;";
                 con = config.getConnection();
                 ps = con.prepareStatement(query);
 
@@ -139,7 +144,8 @@ public class ProductoDAO {
     public boolean actualizarPrecio (Producto_Model prd){
         try {      
           
-                query = "update producto set precio = ? where id = ?;";
+//                query = "update producto set precio = ? where id = ?;";
+                query = "update public.producto set precio = ? where id = ?;";
                 con = config.getConnection();
                 ps = con.prepareStatement(query);
 
@@ -157,7 +163,8 @@ public class ProductoDAO {
     
     public boolean eliminar (Producto_Model prd){
         try {
-            query = "delete from producto where id= ?;";
+//            query = "delete from producto where id= ?;";
+            query = "delete from public.producto where id= ?;";
             con = config.getConnection();
             ps = con.prepareStatement(query);
             

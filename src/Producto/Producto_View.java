@@ -1,6 +1,7 @@
 
 package Producto;
 
+import Producto.Producto_Model;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -203,16 +204,24 @@ public class Producto_View extends javax.swing.JFrame {
     }//GEN-LAST:event_txtComprasActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-
-        try {
-            int id = Integer.parseInt(txtId.getText());      
+        try{
+            int id = Integer.parseInt(txtId.getText());
             controller.obtener1Producto(id);
         } catch (SQLException ex) {
-            Logger.getLogger(Producto_View.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
-        
     }//GEN-LAST:event_btnBuscarActionPerformed
-
+    public void mostrar(Producto_Model prd){
+        txtMarca.setText(prd.getMarca());
+        txtProducto.setText(prd.getProducto());
+        String price = String.valueOf(prd.getPrecio());
+        txtPrecio.setText(price);
+        txtDescripcion.setText(prd.getDescripcion());
+        String cant = String.valueOf(prd.getStock());
+        txtStock.setText(cant);
+        String sells = String.valueOf(prd.getCompras());
+        txtCompras.setText(sells);
+    }
     /**
      * @param args the command line arguments
      */

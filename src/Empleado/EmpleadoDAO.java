@@ -9,7 +9,8 @@ public class EmpleadoDAO {
     
     public List<Empleado_Model> obtenerTodos() {
         List<Empleado_Model> lista = new ArrayList<>();
-        String sql = "SELECT * FROM empleados";
+//        String sql = "SELECT * FROM empleados";
+        String sql = "SELECT * FROM public.empleado";
         
         try(Connection conn = connFactory.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -34,7 +35,8 @@ public class EmpleadoDAO {
     }
     
     public boolean obtenerUno(Empleado_Model emp) throws SQLException{
-        String sql = "SELECT * FROM empleados WHERE id = ?";
+//        String sql = "SELECT * FROM empleados WHERE id = ?";
+        String sql = "SELECT * FROM public.empleado WHERE id = ?";
         
         try(Connection conn = connFactory.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -58,7 +60,8 @@ public class EmpleadoDAO {
     }
     
     public boolean guardar(Empleado_Model emp) throws SQLException{
-        String sql = "INSERT INTO empleados(nombre, apellido, puesto, salario, fecha_ingreso) VALUES(?,?,?,?,?)";
+//        String sql = "INSERT INTO empleados(nombre, apellido, puesto, salario, fecha_ingreso) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO public.empleado(nombre, apellido, puesto, salario, fecha_ingreso) VALUES(?,?,?,?,?)";
         
         try(Connection conn = connFactory.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -78,7 +81,8 @@ public class EmpleadoDAO {
     }
     
     public boolean actualizar(Empleado_Model emp) throws SQLException{
-        String sql = "UPDATE empleados SET nombre = ?, apellido = ?, puesto = ?, salario = ?, fecha_ingreso = ? WHERE id = ?";
+//        String sql = "UPDATE empleados SET nombre = ?, apellido = ?, puesto = ?, salario = ?, fecha_ingreso = ? WHERE id = ?";
+        String sql = "UPDATE public.empleado SET nombre = ?, apellido = ?, puesto = ?, salario = ?, fecha_ingreso = ? WHERE id = ?";
         
         try(Connection conn = connFactory.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
@@ -99,7 +103,8 @@ public class EmpleadoDAO {
     }
     
     public boolean eliminar(int id) throws SQLException{
-        String sql = "DELETE FROM empleados WHERE  id = ?";
+//        String sql = "DELETE FROM empleados WHERE  id = ?";
+        String sql = "DELETE FROM public.empleado WHERE  id = ?";
         
         try(Connection conn = connFactory.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
