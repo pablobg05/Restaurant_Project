@@ -43,7 +43,7 @@ public class Producto_Model {
         this.id= id;
     }
     
-    public Producto_Model(Integer compras, int id){
+    public Producto_Model(int compras, int id){
         this.compras = compras;
         this.id = id;
     }
@@ -52,9 +52,14 @@ public class Producto_Model {
         this.id=id;
     }
     
-    public Producto_Model (int precio, int id){
+    public Producto_Model (Integer precio, int id){
         this.precio=precio;
         this.id=id;
+    }
+    
+    public Producto_Model (int id, double precio){
+        this.id = id;
+        this.precio = precio;
     }
 
     public int getId() {

@@ -21,24 +21,14 @@ public class Producto_Controller {
         Producto_Model prd = new Producto_Model(marca, producto, precio, descripcion);
         dao.guardar(prd);
     }
-    
-    public void actualizarStock (int stock, int id)throws SQLException {
-        Producto_Model prd = new Producto_Model (stock, id, 0);
-        dao.actualiarStock(prd);
-    }
-    
-    public void actualizarPrecio (int precio, int id)throws SQLException {
-        Producto_Model prd = new Producto_Model (precio, id);
-        dao.actualizarPrecio(prd);
-    }
-    
-    public void compras (Integer cantidad, int id)throws SQLException{
-        Producto_Model prd = new Producto_Model (id);
-        dao.compras(prd, cantidad);
-    } 
-     
+
     public void elimiarProducto (int id)throws SQLException{
         Producto_Model prd = new Producto_Model (id);
         dao.eliminar(prd);
+    }
+    
+    public void actualizarInformacion(int id, int compras, int stock, double precio){
+        Producto_Model prd = new Producto_Model (id);
+        dao.actualizarInformacion(prd, compras, stock, precio);
     }
 }
