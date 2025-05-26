@@ -27,8 +27,7 @@ public class Producto_Controller {
         dao.eliminar(prd);
     }
     
-    public void actualizarInformacion(int id, int compras, int stock, double precio){
-        Producto_Model prd = new Producto_Model (id);
-        dao.actualizarInformacion(prd, compras, stock, precio);
-    }
+  public void actualizarInformacion(int id, int compras, int stock, double precio, String descripcionActual, Producto_Model productoActual) {
+    dao.actualizarInformacion(productoActual, compras, stock, precio, descripcionActual);
+}
 }

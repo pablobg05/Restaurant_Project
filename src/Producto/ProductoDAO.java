@@ -97,57 +97,9 @@ public class ProductoDAO {
         return false;
     }
     
-    public boolean actualiarStock (Producto_Model prd){
-        try {
-//            query = "update producto set stock = ? where id = ?;";
-            query = "update public.producto set stock = ? where id = ?;";
-            con = config.getConnection();
-            ps = con.prepareStatement(query);
-            
 
-            ps.setInt(1, prd.getStock());
-            ps.setInt(2, prd.getId());
-            
-            ps.executeUpdate();
-            
-            ps.close();
-            con.close();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
     
-    public boolean compras (Producto_Model prd, int cantidad){
-        try {      
-            if ((prd.getStock()-cantidad)>=0){
-//                query = "update producto set stock = ? compras = ? where id = ?;";
-                query = "update public.producto set stock = ?, compras = ? where id = ?;";
-                con = config.getConnection();
-                ps = con.prepareStatement(query);
 
-                ps.setInt(1, prd.getStock()- cantidad);
-                ps.setInt(2, prd.getCompras()+ cantidad);
-                ps.setInt(3, prd.getId());
-                ps.executeUpdate();
-                
-                ps.close();
-                con.close();
-                
-                return true;
-            } else {
-                System.out.println("Ha ocurrido un error en la compra! Stock insuficiente");
-                return false;
-            }
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
-    
     public boolean eliminar (Producto_Model prd){
         try {
 //            query = "delete from producto where id= ?;";
@@ -167,33 +119,30 @@ public class ProductoDAO {
         return false;
     }
     
-    public boolean actualizarInformacion(Producto_Model prd, int compras, int stock, double precio){
+    public boolean actualizarInformacion(Producto_Model prd, int comprasNuevas, int stockNuevasEntradas, double nuevoPrecio, String descripcionActual){
         try {
-            query = "update public.producto set precio = ?, stock = ?, compras = ? ;";
+            if (nuevoPrecio <= 0 || stockNuevasEntradas < 0 || comprasNuevas < 0) {
+                return false;
+            }
+
+            int nuevoStock = (prd.getStock() - comprasNuevas);
+            nuevoStock =  prd.getStock()+stockNuevasEntradas;
+            int nuevasCompras = prd.getCompras() + comprasNuevas;
+
+            if (nuevoStock < 0) {
+                return false;
+            }
+
+            query = "UPDATE public.producto SET precio = ?, stock = ?, compras = ?, descripcion = ? WHERE id = ?;";
             con = config.getConnection();
             ps = con.prepareStatement(query);
-      
-            if (precio>0){
-               ps.setDouble(1, prd.getPrecio()+precio); 
-            } else {
-                return false;
-            }
-            
-            if(stock>0){
-                ps.setInt(2, prd.getStock()+stock);
-            } else {
-                return false;
-            }
-            
-            if ((prd.getStock()-prd.getCompras())>=0){
-                ps.setInt(2, prd.getStock()-compras);
-                ps.setInt(3, prd.getCompras()+compras);
-            } else {
-                return false;
-            }
-            
-            
-            
+
+            ps.setDouble(1, nuevoPrecio);
+            ps.setInt(2, nuevoStock);
+            ps.setInt(3, nuevasCompras);
+            ps.setString(4, descripcionActual);
+            ps.setInt(5, prd.getId());
+
             ps.executeUpdate();
             ps.close();
             con.close();

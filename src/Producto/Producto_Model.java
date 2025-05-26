@@ -38,29 +38,22 @@ public class Producto_Model {
         this.descripcion = descripcion;
     }
     
-    public Producto_Model(int stock, int id, int a){
-        this.stock = stock;
-        this.id= id;
+    public Producto_Model(int id, String descripcion){
+        this.id = id;
+        this.descripcion = descripcion;
     }
     
-    public Producto_Model(int compras, int id){
+    public Producto_Model(int compras, int stock, double precio, String descripcion){
         this.compras = compras;
-        this.id = id;
+        this.stock = stock;
+        this.precio = precio;
+        this.descripcion = descripcion;
     }
     
     public Producto_Model (int id){
         this.id=id;
     }
     
-    public Producto_Model (Integer precio, int id){
-        this.precio=precio;
-        this.id=id;
-    }
-    
-    public Producto_Model (int id, double precio){
-        this.id = id;
-        this.precio = precio;
-    }
 
     public int getId() {
         return id;
