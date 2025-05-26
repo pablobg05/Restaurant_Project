@@ -34,6 +34,14 @@ public class Empleado_Model {
         this.estado = estado;
     }
     
+    public Empleado_Model(String nombre, String apellido, String puesto, double salario, java.sql.Date fecha_ingreso){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.puesto = puesto;
+        this.salario = salario;
+        this.fecha_ingreso = fecha_ingreso;
+    }
+    
     public Empleado_Model(String nombre, String apellido, String puesto, double salario, java.sql.Date fecha_ingreso, boolean estado){
         this.nombre = nombre;
         this.apellido = apellido;

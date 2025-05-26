@@ -17,6 +17,7 @@ public class Empleado_View extends javax.swing.JFrame {
     public Empleado_View() throws SQLException{
         setTitle("Gestión de Empleados");
         initComponents();
+        Message.setText("");
         btnAdd.setIcon(new ImageIcon("C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\Icono Mas.png"));
 //        btnAdd.setIcon(new ImageIcon("D:\\Usuario\\Desktop\\PABLITO\\UMG\\Progra\\Imagenes\\Mas.png"));
 //        btnAdd.setIcon(new ImageIcon("E:\\Pablo_Bailey_Lenovo\\Documents\\UMG\\2do Año\\Progra I\\Proyecto Restaurante\\Icono Mas.png"));
@@ -63,6 +64,7 @@ public class Empleado_View extends javax.swing.JFrame {
         dcStart = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
         cbStatus = new javax.swing.JComboBox<>();
+        Message = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 204));
@@ -124,6 +126,11 @@ public class Empleado_View extends javax.swing.JFrame {
         });
 
         btnClean.setBackground(new java.awt.Color(210, 232, 255));
+        btnClean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCleanActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("UD Digi Kyokasho NK", 1, 12)); // NOI18N
         jLabel4.setText("Puesto");
@@ -145,6 +152,9 @@ public class Empleado_View extends javax.swing.JFrame {
 
         cbStatus.setBackground(new java.awt.Color(210, 232, 255));
         cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar Estado>", "Alta", "Baja" }));
+        cbStatus.setName(""); // NOI18N
+
+        Message.setText("jLabel8");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,14 +177,6 @@ public class Empleado_View extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
                                 .addComponent(txtLN))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -193,7 +195,20 @@ public class Empleado_View extends javax.swing.JFrame {
                             .addComponent(dcStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtCharge, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtSalary, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cbStatus, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(cbStatus, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Message, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -227,7 +242,9 @@ public class Empleado_View extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(cbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Message, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(btnCheck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -252,22 +269,16 @@ public class Empleado_View extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         try {
-            String nombre = txtName.getName();
-            String apellido = txtLN.getName();
-            String puesto = txtCharge.getName();
-            Double salario = Double.valueOf(txtSalary.getName());
+            String nombre = txtName.getText();
+            String apellido = txtLN.getText();
+            String puesto = txtCharge.getText();
+            Double salario = Double.valueOf(txtSalary.getText());
             Date date = dcStart.getDate();
             java.sql.Date fecha_ingreso = new java.sql.Date(date.getTime());
-            int status = cbStatus.getSelectedIndex();
-            boolean estado = true;
-            if(status == 1){
-                estado = true;
-            } else if(status == 2) {
-                estado = false;
-            }
-            controller.agregarEmpleado(nombre, apellido, puesto, salario, fecha_ingreso, estado);
+            controller.agregarEmpleado(nombre, apellido, puesto, salario, fecha_ingreso);
+            Message.setText("Empleado agregado exitosamente");
         } catch (SQLException ex) {
-            Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -276,11 +287,11 @@ public class Empleado_View extends javax.swing.JFrame {
     }//GEN-LAST:event_txtChargeActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        int id = Integer.parseInt(txtID.getName());
-        String nombre = txtName.getName();
-        String apellido = txtLN.getName();
-        String puesto = txtCharge.getName();
-        Double salario = Double.valueOf(txtSalary.getName());
+        int id = Integer.parseInt(txtID.getText());
+        String nombre = txtName.getText();
+        String apellido = txtLN.getText();
+        String puesto = txtCharge.getText();
+        Double salario = Double.valueOf(txtSalary.getText());
         Date date = dcStart.getDate();
         java.sql.Date fecha_ingreso = new java.sql.Date(date.getTime());
         int status = cbStatus.getSelectedIndex();
@@ -292,19 +303,41 @@ public class Empleado_View extends javax.swing.JFrame {
         }
         try {
             controller.actualizarEmpleado(id, nombre, apellido, puesto, salario, fecha_ingreso, estado);
+            Message.setText("Empleado actualizado con exito");
         } catch (SQLException ex) {
-            Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
         try {
-            int id = Integer.parseInt(txtID.getName());
-            controller.obtenerEmpleado(id);
+            int id = Integer.parseInt(txtID.getText());
+            Empleado_Model emp = controller.obtenerEmpleado(id);
+            txtName.setText(emp.getNombre());
+            txtLN.setText(emp.getApellido());
+            txtCharge.setText(emp.getPuesto());
+            String Sal = String.valueOf(emp.getSalario());
+            txtSalary.setText(Sal);
+            if(emp.isEstado()){
+                cbStatus.setSelectedIndex(1);
+            } else{
+                cbStatus.setSelectedIndex(2);
+            }
+            dcStart.setDate(emp.getFecha_ingreso());
         } catch (SQLException ex) {
-            Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnCheckActionPerformed
+
+    private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
+        txtID.setText("");
+        txtName.setText("");
+        txtLN.setText("");
+        txtCharge.setText("");
+        txtSalary.setText("");
+        dcStart.setDate(null);
+        cbStatus.setSelectedIndex(0);
+    }//GEN-LAST:event_btnCleanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,6 +379,7 @@ public class Empleado_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Message;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCheck;
     private javax.swing.JButton btnClean;

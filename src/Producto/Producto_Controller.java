@@ -13,8 +13,6 @@ public class Producto_Controller {
     
     public Producto_Model getProductoById(int id) throws SQLException{
          return dao.obtenerUno(id);
-        //Producto_Model producto = dao.obtenerUno(prd);
-         
     }
     
     public void ingresarProducto (String marca, String producto, double precio, String descripcion) throws SQLException{
