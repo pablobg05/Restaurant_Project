@@ -16,7 +16,7 @@ public class Sucursal_Controller {
         return dao.obtenerUno(id);
     }
 
-    public void ingresarSucursal(String nombre, String direccion, int telefono, String correo, String gerente) throws SQLException {
+    public void ingresarSucursal(String nombre, String direccion, String telefono, String correo, String gerente) throws SQLException {
         Sucursal_Model suc = new Sucursal_Model(nombre, direccion, telefono, correo, gerente);
         dao.guardar(suc);
     }
@@ -26,7 +26,7 @@ public class Sucursal_Controller {
         dao.eliminar(suc);
     }
 
-    public void actualizarInformacion(int id, int nuevoTelefono, String nuevoGerente) {
+    public void actualizarInformacion(int id, String nuevoTelefono, String nuevoGerente) {
         Sucursal_Model suc = new Sucursal_Model(id, nuevoTelefono, nuevoGerente);
         dao.actualizar(suc);
     }

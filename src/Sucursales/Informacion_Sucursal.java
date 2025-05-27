@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Informacion_Sucursal extends javax.swing.JInternalFrame {
 
-    private final Producto_Controller controller = new Producto_Controller();
+    private final Sucursal_Controller controller = new Sucursal_Controller();
     
     public Informacion_Sucursal() {
         initComponents();
@@ -40,20 +40,20 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        lblDescripcion = new javax.swing.JLabel();
-        lblProducto = new javax.swing.JLabel();
-        lblMarca = new javax.swing.JLabel();
-        lblPrecio = new javax.swing.JLabel();
+        lblApertura = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        lblStock = new javax.swing.JLabel();
-        lblCompras = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        lblGerente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setText("Listado de Productos");
+        jLabel1.setText("Listado sucursales");
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -159,7 +159,7 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Marca", "Producto", "Precio", "Stock", "Compras"
+                "ID", "Nombre", "Direccion", "Telefono", "correo", "gerente"
             }
         ));
         jScrollPane1.setViewportView(Tabla);
@@ -179,39 +179,39 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
         jScrollPane2.setViewportView(txtId);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Producto:");
+        jLabel5.setText("Direccion:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Marca:");
+        jLabel6.setText("Nombre:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Precio:   Q");
+        jLabel7.setText("Teléfono: ");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Descripción");
+        jLabel8.setText("Apertura:");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setText("Id:");
 
-        lblDescripcion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDescripcion.setText("...");
-        lblDescripcion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblApertura.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblApertura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblApertura.setText("...");
+        lblApertura.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblProducto.setText("...");
-        lblProducto.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblDireccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblDireccion.setText("...");
+        lblDireccion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblMarca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMarca.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblMarca.setText("...");
-        lblMarca.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNombre.setText("...");
+        lblNombre.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblPrecio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPrecio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPrecio.setText("...");
-        lblPrecio.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblTelefono.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTelefono.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblTelefono.setText("...");
+        lblTelefono.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -221,20 +221,20 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Stock:");
+        jLabel9.setText("Correo:");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setText("Compras;");
+        jLabel11.setText("Gerente:");
 
-        lblStock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblStock.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblStock.setText("...");
-        lblStock.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblCorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCorreo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblCorreo.setText("...");
+        lblCorreo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblCompras.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblCompras.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblCompras.setText("...");
-        lblCompras.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblGerente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblGerente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblGerente.setText("...");
+        lblGerente.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,50 +251,53 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel10))
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel9))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnBuscar))
-                                    .addComponent(lblMarca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblStock, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel11)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(15, 15, 15))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3)
-                    .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnBuscar))
+                                            .addComponent(lblCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 9, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel11))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblGerente, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                                    .addComponent(lblApertura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(79, 79, 79)))
+                        .addGap(33, 33, 33))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel8)))
-                .addGap(24, 24, 24))
+                        .addComponent(jLabel3)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(142, 142, 142)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(58, 58, 58))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(6, 6, 6))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -310,27 +313,28 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(lblMarca))
+                            .addComponent(lblNombre))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(lblProducto))
+                            .addComponent(lblDireccion))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(lblPrecio))
+                            .addComponent(lblTelefono))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(lblStock))
+                            .addComponent(lblCorreo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(lblCompras))
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel8)
+                            .addComponent(lblGerente))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(lblApertura))
+                        .addContainerGap(79, Short.MAX_VALUE))))
         );
 
         pack();
@@ -339,17 +343,14 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try{
             int id = Integer.parseInt(txtId.getText());
-            Producto_Model prodtemp =  controller.getProductoById(id);
-            
-            lblMarca.setText(prodtemp.getMarca());
-            lblProducto.setText(prodtemp.getProducto());
-            String price = String.valueOf(prodtemp.getPrecio());
-            lblPrecio.setText(price);
-            lblDescripcion.setText(prodtemp.getDescripcion());
-            String cant = String.valueOf(prodtemp.getStock());
-            lblStock.setText(cant);
-            String sells = String.valueOf(prodtemp.getCompras());
-            lblCompras.setText(sells);
+                Sucursal_Model suctemp = controller.getSucursalById(id);
+
+                lblNombre.setText(suctemp.getNombre());
+                lblDireccion.setText(suctemp.getDireccion());
+                lblTelefono.setText(String.valueOf(suctemp.getTelefono()));
+                lblApertura.setText(String.valueOf(suctemp.getFechaApertura()));
+                lblCorreo.setText(suctemp.getCorreo());
+                lblGerente.setText(suctemp.getGerente());
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -399,18 +400,15 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
     
     private void cargarTabla(){
         try {
-            List<Producto_Model> lista = controller.obtenerProductos();
+            List<Sucursal_Model> lista = controller.obtenerSucursales();
             
             for(int filas = 0; filas < lista.size(); filas++){
                 Tabla.setValueAt(lista.get(filas).getId(), filas, 0);
-                Tabla.setValueAt(lista.get(filas).getMarca(), filas, 1);
-                Tabla.setValueAt(lista.get(filas).getProducto(), filas, 2);
-                Tabla.setValueAt(lista.get(filas).getPrecio(), filas, 3);
-                Tabla.setValueAt(lista.get(filas).getStock(), filas, 4);
-                Tabla.setValueAt(lista.get(filas).getCompras(), filas, 5);
-                
-               
-                
+                Tabla.setValueAt(lista.get(filas).getNombre(), filas, 1);
+                Tabla.setValueAt(lista.get(filas).getDireccion(), filas, 2);
+                Tabla.setValueAt(lista.get(filas).getTelefono(), filas, 3);
+                Tabla.setValueAt(lista.get(filas).getCorreo(), filas, 4);
+                Tabla.setValueAt(lista.get(filas).getGerente(), filas, 5);        
             }
             
         } catch (SQLException ex) {
@@ -435,12 +433,12 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblCompras;
-    private javax.swing.JLabel lblDescripcion;
-    private javax.swing.JLabel lblMarca;
-    private javax.swing.JLabel lblPrecio;
-    private javax.swing.JLabel lblProducto;
-    private javax.swing.JLabel lblStock;
+    private javax.swing.JLabel lblApertura;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblGerente;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTelefono;
     private javax.swing.JTextPane txtId;
     // End of variables declaration//GEN-END:variables
 }
