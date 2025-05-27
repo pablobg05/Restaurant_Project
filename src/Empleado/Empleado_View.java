@@ -153,6 +153,11 @@ public class Empleado_View extends javax.swing.JFrame {
         cbStatus.setBackground(new java.awt.Color(210, 232, 255));
         cbStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccionar Estado>", "Alta", "Baja" }));
         cbStatus.setName(""); // NOI18N
+        cbStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbStatusActionPerformed(evt);
+            }
+        });
 
         Message.setText("jLabel8");
 
@@ -301,32 +306,32 @@ public class Empleado_View extends javax.swing.JFrame {
         } else if(status == 2) {
             estado = false;
         }
-        try {
-            controller.actualizarEmpleado(id, nombre, apellido, puesto, salario, fecha_ingreso, estado);
-            Message.setText("Empleado actualizado con exito");
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+//        try {
+//            controller.actualizarEmpleado(id, nombre, apellido, puesto, salario, fecha_ingreso, estado);
+//            Message.setText("Empleado actualizado con exito");
+//        } catch (SQLException ex) {
+//            System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
-        try {
-            int id = Integer.parseInt(txtID.getText());
-            Empleado_Model emp = controller.obtenerEmpleado(id);
-            txtName.setText(emp.getNombre());
-            txtLN.setText(emp.getApellido());
-            txtCharge.setText(emp.getPuesto());
-            String Sal = String.valueOf(emp.getSalario());
-            txtSalary.setText(Sal);
-            if(emp.isEstado()){
-                cbStatus.setSelectedIndex(1);
-            } else{
-                cbStatus.setSelectedIndex(2);
-            }
-            dcStart.setDate(emp.getFecha_ingreso());
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
+//        try {
+//            int id = Integer.parseInt(txtID.getText());
+//            Empleado_Model emp = controller.obtenerEmpleado(id);
+//            txtName.setText(emp.getNombre());
+//            txtLN.setText(emp.getApellido());
+//            txtCharge.setText(emp.getPuesto());
+//            String Sal = String.valueOf(emp.getSalario());
+//            txtSalary.setText(Sal);
+//            if(emp.isEstado()){
+//                cbStatus.setSelectedIndex(1);
+//            } else{
+//                cbStatus.setSelectedIndex(2);
+//            }
+//            dcStart.setDate(emp.getFecha_ingreso());
+//        } catch (SQLException ex) {
+//            System.out.println(ex.getMessage());
+//        }
     }//GEN-LAST:event_btnCheckActionPerformed
 
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
@@ -338,6 +343,10 @@ public class Empleado_View extends javax.swing.JFrame {
         dcStart.setDate(null);
         cbStatus.setSelectedIndex(0);
     }//GEN-LAST:event_btnCleanActionPerformed
+
+    private void cbStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbStatusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,11 +378,11 @@ public class Empleado_View extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new Empleado_View().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
-                }
+//                try {
+////                    new Empleado_View().setVisible(true);
+//                } catch (SQLException ex) {
+//                    Logger.getLogger(Empleado_View.class.getName()).log(Level.SEVERE, null, ex);
+//                }
             }
         });
     }

@@ -50,6 +50,13 @@ public class Empleado_Model {
         this.fecha_ingreso = fecha_ingreso;
         this.estado = estado;
     }
+    
+    public Empleado_Model (int id, String puesto, double salario, boolean estado){
+        this.id=id;
+        this.puesto=puesto;
+        this.salario=salario;
+        this.estado=estado;
+    }
 
     public Empleado_Model(int id) {
         this.id = id;

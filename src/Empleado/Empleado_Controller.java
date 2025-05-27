@@ -18,8 +18,8 @@ public class Empleado_Controller {
         dao.guardar(emp);
     }
     
-    public void actualizarEmpleado(int id, String nombre, String apellido, String puesto, Double salario, java.sql.Date fecha_ingreso, boolean estado) throws SQLException{
-        Empleado_Model emp = new Empleado_Model(id, nombre, apellido, puesto, salario, fecha_ingreso, estado);
+    public void actualizarEmpleado(int id, String puesto, Double salario, boolean estado) throws SQLException{
+        Empleado_Model emp = new Empleado_Model(id, puesto, salario, estado);
         dao.actualizar(emp);
     }
     

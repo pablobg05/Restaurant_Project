@@ -196,7 +196,7 @@ public class MenuProducto extends javax.swing.JFrame {
         panel.revalidate(); // Revalida layout
         panel.repaint(); // Redibuja el panel
 
-        Ingreso interfaz = new Ingreso();
+        Ingreso_Producto interfaz = new Ingreso_Producto();
 
         panel.add(interfaz);
         interfaz.show(true); // Mucho mejor que .show(), que está obsoleto

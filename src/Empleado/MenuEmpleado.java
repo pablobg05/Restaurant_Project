@@ -169,7 +169,7 @@ public class MenuEmpleado extends javax.swing.JFrame {
         panel.revalidate(); // Revalida el panel para actualizar el layout
         panel.repaint(); // Repinta el panel para reflejar los cambios
 
-        Edicion_Producto interfaz = new Edicion_Producto();
+        Edicion_Empleado interfaz = new Edicion_Empleado();
         panel.setSize(panel.getWidth(), panel.getHeight());
         panel.add(interfaz);
         interfaz.show();
@@ -193,7 +193,7 @@ public class MenuEmpleado extends javax.swing.JFrame {
         panel.revalidate(); // Revalida layout
         panel.repaint(); // Redibuja el panel
 
-        Ingreso interfaz = new Ingreso();
+        Ingreso_Empleado interfaz = new Ingreso_Empleado();
 
         panel.add(interfaz);
         interfaz.show(true); // Mucho mejor que .show(), que está obsoleto
