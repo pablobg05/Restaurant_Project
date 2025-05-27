@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 public class EmpleadoDAO {
-    private CreateConnection connFactory = new CreateConnection();
+    private CreateConnection cn = new CreateConnection();
     
     public List<Empleado_Model> obtenerTodos() {
         List<Empleado_Model> lista = new ArrayList<>();
 //        String sql = "SELECT * FROM empleados";
         String sql = "SELECT * FROM empleado";
         
-        try(Connection conn = connFactory.getConnection();
+        try(Connection conn = cn.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery()){
             
@@ -29,7 +29,7 @@ public class EmpleadoDAO {
             lista.add(emp);
             }
         }catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return lista;
     }
@@ -39,7 +39,7 @@ public class EmpleadoDAO {
 //        String sql = "SELECT * FROM empleados WHERE id = ?";
         String sql = "SELECT * FROM empleado WHERE id = ?";
         
-        try(Connection conn = connFactory.getConnection();
+        try(Connection conn = cn.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
             
             stmt.setInt(1, id);
@@ -55,7 +55,7 @@ public class EmpleadoDAO {
                 emp.setEstado(rs.getBoolean("estado"));
             }
         }catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return emp;
     }
@@ -64,7 +64,7 @@ public class EmpleadoDAO {
 //        String sql = "INSERT INTO empleados(nombre, apellido, puesto, salario, fecha_ingreso) VALUES(?,?,?,?,?)";
         String sql = "INSERT INTO empleado(nombre, apellido, puesto, salario, fecha_ingreso) VALUES(?,?,?,?,?)";
         
-        try(Connection conn = connFactory.getConnection();
+        try(Connection conn = cn.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
             
             stmt.setString(1, emp.getNombre());
@@ -76,7 +76,7 @@ public class EmpleadoDAO {
             stmt.executeUpdate();
             return true;
         }catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
        return false;
     }
@@ -85,7 +85,7 @@ public class EmpleadoDAO {
 //        String sql = "UPDATE empleados SET nombre = ?, apellido = ?, puesto = ?, salario = ?, fecha_ingreso = ? WHERE id = ?";
         String sql = "UPDATE empleado SET nombre = ?, apellido = ?, puesto = ?, salario = ?, fecha_ingreso = ?, estado = ? WHERE id = ?";
         
-        try(Connection conn = connFactory.getConnection();
+        try(Connection conn = cn.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
             
             stmt.setString(1, emp.getNombre());
@@ -99,7 +99,7 @@ public class EmpleadoDAO {
             stmt.executeUpdate();
             return true;
         } catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return false;
     }
@@ -108,14 +108,14 @@ public class EmpleadoDAO {
 //        String sql = "DELETE FROM empleados WHERE  id = ?";
         String sql = "DELETE FROM empleado WHERE  id = ?";
         
-        try(Connection conn = connFactory.getConnection();
+        try(Connection conn = cn.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)){
             
             stmt.setInt(1, id);
             stmt.executeUpdate();
             return true;
         } catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return false;
     }
