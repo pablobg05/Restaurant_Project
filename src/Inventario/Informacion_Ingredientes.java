@@ -336,7 +336,7 @@ public class Informacion_Ingredientes extends javax.swing.JInternalFrame {
             Inventario_Model prodtemp =  controller.getProductoById(id);
             
             lblMarca.setText(prodtemp.getMarca());
-            lblProducto.setText(prodtemp.getProducto());
+            lblProducto.setText(prodtemp.getIngredientes());
             String price = String.valueOf(prodtemp.getPrecio());
             lblPrecio.setText(price);
             taDescripcion.setText(prodtemp.getDescripcion());
@@ -406,7 +406,7 @@ public class Informacion_Ingredientes extends javax.swing.JInternalFrame {
             for(int filas = 0; filas < lista.size(); filas++){
                 Tabla.setValueAt(lista.get(filas).getId(), filas, 0);
                 Tabla.setValueAt(lista.get(filas).getMarca(), filas, 1);
-                Tabla.setValueAt(lista.get(filas).getProducto(), filas, 2);
+                Tabla.setValueAt(lista.get(filas).getIngredientes(), filas, 2);
                 Tabla.setValueAt(lista.get(filas).getPrecio(), filas, 3);
                 Tabla.setValueAt(lista.get(filas).getStock(), filas, 4);
                 Tabla.setValueAt(lista.get(filas).getCompras(), filas, 5);

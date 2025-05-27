@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextArea;
-
+import javax.swing.JOptionPane;
 
 public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
     
@@ -345,7 +345,7 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
             int id = Integer.parseInt(txtId.getText());
             Inventario_Model prodtemp =  controller.getProductoById(id);
             
-            lblProducto.setText(prodtemp.getProducto());
+            lblProducto.setText(prodtemp.getIngredientes());
             String price = String.valueOf(prodtemp.getPrecio());
             lblPrecio.setText(price);
             txtPrecio.setText(price);
@@ -362,7 +362,7 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-         int id = Integer.parseInt(txtId.getText());
+        int id = Integer.parseInt(txtId.getText());
 
         int stock = Integer.parseInt(txtStock.getText());
         double precio = Double.parseDouble(txtPrecio.getText());
@@ -372,15 +372,29 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         int stockActual = Integer.parseInt(lblStock.getText());
         double precioActual = Double.parseDouble(lblPrecio.getText());
 
-        // Crear el producto actual con ID incluido
-        Inventario_Model productoActual = new Inventario_Model(id);
-        productoActual.setStock(stockActual);
-        productoActual.setPrecio(precioActual);
-        int compras = 0;
+        // Mostrar mensaje de confirmación antes de actualizar
+        String mensaje = "¿Está seguro que desea editar completamente este producto?\n\n"
+                       + "Stock actual: " + stockActual + "\n"
+                       + "Nuevo stock: " + stock + "\n\n"
+                       + "Precio actual: Q" + precioActual + "\n"
+                       + "Nuevo precio: Q" + precio + "\n\n"
+                       + "Descripción nueva: " + descripcionActual;
+        String[] opciones = {"Confirmar", "Cancelar"};
 
-        controller.actualizarInformacion(id, compras, stock, precio, descripcionActual, productoActual);
-        limpiar();
-        Message.setText("Producto actualizado");
+        int respuesta = JOptionPane.showOptionDialog(this, mensaje, "Confirmar actualización",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+        if (respuesta == JOptionPane.YES_OPTION) {
+            // Crear el producto actual con ID incluido
+            Inventario_Model productoActual = new Inventario_Model(id);
+            productoActual.setStock(stockActual);
+            productoActual.setPrecio(precioActual);
+            int compras = 0;
+
+            controller.reemplazarStock(id, stock, precio, descripcionActual);
+            limpiar();
+            Message.setText("Producto actualizado");
+        }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed

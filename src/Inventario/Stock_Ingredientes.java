@@ -422,7 +422,7 @@ public class Stock_Ingredientes extends javax.swing.JInternalFrame {
         try{
             int id = Integer.parseInt(txtId.getText());
             Inventario_Model prodtemp =  controller.getProductoById(id);
-            lblProducto.setText(prodtemp.getProducto());
+            lblProducto.setText(prodtemp.getIngredientes());
             String price = String.valueOf(prodtemp.getPrecio());
             String cant = String.valueOf(prodtemp.getStock());
             lblStock.setText(cant);
@@ -478,7 +478,7 @@ public class Stock_Ingredientes extends javax.swing.JInternalFrame {
     private void Variable_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Variable_BTNActionPerformed
         String valorIngresado = jTextField_variable.getText();
         lblStockPreeliminar.setText(valorIngresado);
-        
+
         String ID = txtId.getText().trim();
         String Subtotal = lblStockPreeliminar.getText().trim();
 
@@ -496,42 +496,37 @@ public class Stock_Ingredientes extends javax.swing.JInternalFrame {
                 return;
             }
 
-            lblStockPreeliminar.setText(Subtotal);
+            int id = Integer.parseInt(ID);
+            InventarioDAO dao = new InventarioDAO();
 
-            // Confirmación con botones personalizados
-            String mensaje = "¿Desea añadir " +Subtotal+ " unidades al stock?";
+            // Obtener el stock actual antes de continuar
+            int stockActual = dao.obtenerStockPorID(id); // Este método debes implementarlo
+            int nuevoStock = stockActual + cantidad;
+
+            // Mensaje con la suma incluida
+            String mensaje = "El stock actual es: " + stockActual + "\n"
+                           + "Cantidad a añadir: " + cantidad + "\n"
+                           + "Nuevo stock total será: " + nuevoStock + "\n\n"
+                           + "¿Desea confirmar la actualización?";
             String[] opciones = {"Confirmar", "Cancelar"};
 
-            int respuesta = JOptionPane.showOptionDialog(this, mensaje, "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+            int respuesta = JOptionPane.showOptionDialog(this, mensaje, "Confirmación",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
             if (respuesta == 0) {
-                // Aquí haces la lógica para añadir el stock
-                    if (respuesta == 0) {
-                        try {
-                            int id = Integer.parseInt(ID);
-                            int cantidadASumar = Integer.parseInt(Subtotal);
+                Inventario_Model producto = new Inventario_Model();
+                producto.setId(id);
 
-                            Inventario_Model model = new Inventario_Model();
-                            model.setId(id);
+                boolean exito = dao.actualizarSTOCK(producto, cantidad);
 
-                            InventarioDAO dao = new InventarioDAO();
-                            boolean actualizado = dao.actualizarSTOCK(model, cantidadASumar);
-
-                            if (actualizado) {
-                                JOptionPane.showMessageDialog(this, "Stock actualizado correctamente.");
-                            } else {
-                                JOptionPane.showMessageDialog(this, "Error al actualizar el stock.", "Error", JOptionPane.ERROR_MESSAGE);
-                            }
-
-                            jTextField_variable.setText("");
-                            lblStockPreeliminar.setText("");
-
-                        } catch (NumberFormatException ex) {
-                            JOptionPane.showMessageDialog(this, "ID o cantidad inválidos.", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                    }
-
-                JOptionPane.showMessageDialog(this, "Stock actualizado correctamente.");
+                if (exito) {
+                    JOptionPane.showMessageDialog(this, "Stock actualizado correctamente.");
+                    jTextField_variable.setText("");
+                    lblStockPreeliminar.setText("");
+                    cargarTabla();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Ocurrió un error al actualizar el stock.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
 
         } catch (NumberFormatException e) {
@@ -708,7 +703,7 @@ public class Stock_Ingredientes extends javax.swing.JInternalFrame {
             for(int filas = 0; filas < lista.size(); filas++){
                 Tabla.setValueAt(lista.get(filas).getId(), filas, 0);
                 Tabla.setValueAt(lista.get(filas).getMarca(), filas, 1);
-                Tabla.setValueAt(lista.get(filas).getProducto(), filas, 2);
+                Tabla.setValueAt(lista.get(filas).getIngredientes(), filas, 2);
                 Tabla.setValueAt(lista.get(filas).getPrecio(), filas, 3);
                 Tabla.setValueAt(lista.get(filas).getStock(), filas, 4);
                 Tabla.setValueAt(lista.get(filas).getCompras(), filas, 5);
