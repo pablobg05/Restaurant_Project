@@ -6,7 +6,7 @@ import java.util.List;
 import java.sql.*;
 
 public class SucursalDAO {
-    private CreateConnection config = new CreateConnection();
+    private final CreateConnection config = new CreateConnection();
     Connection con;
     PreparedStatement ps;
     
@@ -27,8 +27,8 @@ public class SucursalDAO {
                     rs.getString("direccion"),
                     rs.getString("telefono"),
                     rs.getString("correo"),
-                    rs.getString("gerente"),
-                    rs.getDate("fechaApertura")
+                    rs.getInt("id_gerente"),
+                    rs.getDate("fecha_apertura")
                 );
                 lista.add(suc);
             }
@@ -55,8 +55,8 @@ public class SucursalDAO {
                 suc.setDireccion(rs.getString("direccion"));
                 suc.setTelefono(rs.getString("telefono"));
                 suc.setCorreo(rs.getString("correo"));
-                suc.setGerente(rs.getString("gerente"));
-                suc.setFechaApertura(rs.getDate("fechaApertura"));
+                suc.setGerente(rs.getInt("id_gerente"));
+                suc.setFechaApertura(rs.getDate("fecha_apertura"));
             }
             rs.close();
             ps.close();
@@ -71,7 +71,7 @@ public class SucursalDAO {
     
      public boolean guardar(Sucursal_Model suc) {
         try {
-            query = "INSERT INTO Sucursal (nombre, direccion, telefono, correo, gerente, fechaApertura) VALUES (?, ?, ?, ?, ?,NOW())";
+            query = "INSERT INTO Sucursal (nombre, direccion, telefono, correo, id_gerente, fecha_apertura) VALUES (?, ?, ?, ?, ?,NOW())";
             con = config.getConnection();
             ps = con.prepareStatement(query);
 
@@ -80,7 +80,7 @@ public class SucursalDAO {
             ps.setString(2, suc.getDireccion());
             ps.setString(3, suc.getTelefono());
             ps.setString(4, suc.getCorreo());
-            ps.setString(5, suc.getGerente());
+            ps.setInt(5, suc.getGerente());
 
 
             ps.executeUpdate();
@@ -114,13 +114,13 @@ public class SucursalDAO {
     
     public boolean actualizar(Sucursal_Model suc) {
         try {
-            query = "UPDATE Sucursal SET telefono = ?, gerente = ? WHERE id = ?";
+            query = "UPDATE Sucursal SET telefono = ?, id_gerente = ? WHERE id = ?";
             con = config.getConnection();
             ps = con.prepareStatement(query);
 
 
             ps.setString(1, suc.getTelefono());
-            ps.setString(2, suc.getGerente());
+            ps.setInt(2, suc.getGerente());
             ps.setString(3, suc.getCorreo());
             ps.setInt(4, suc.getId());
 

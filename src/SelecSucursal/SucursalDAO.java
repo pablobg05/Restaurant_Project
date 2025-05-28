@@ -6,7 +6,7 @@ import java.util.List;
 import java.sql.*;
 
 public class SucursalDAO {
-    private CreateConnection config = new CreateConnection();
+    private final CreateConnection config = new CreateConnection();
     Connection con;
     PreparedStatement ps;
     
@@ -27,8 +27,8 @@ public class SucursalDAO {
                     rs.getString("direccion"),
                     rs.getString("telefono"),
                     rs.getString("correo"),
-                    rs.getString("gerente"),
-                    rs.getDate("fechaApertura")
+                    rs.getInt("id_gerente"),
+                    rs.getDate("fecha_apertura")
                 );
                 lista.add(suc);
             }
@@ -55,8 +55,8 @@ public class SucursalDAO {
                 suc.setDireccion(rs.getString("direccion"));
                 suc.setTelefono(rs.getString("telefono"));
                 suc.setCorreo(rs.getString("correo"));
-                suc.setGerente(rs.getString("gerente"));
-                suc.setFechaApertura(rs.getDate("fechaApertura"));
+                suc.setGerente(rs.getInt("gerente"));
+                suc.setFechaApertura(rs.getDate("fecha_apertura"));
             }
             rs.close();
             ps.close();

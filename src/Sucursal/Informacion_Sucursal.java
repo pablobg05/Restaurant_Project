@@ -379,7 +379,7 @@ public class Informacion_Sucursal extends javax.swing.JInternalFrame {
                 lblTelefono.setText(String.valueOf(suctemp.getTelefono()));
                 lblApertura.setText(String.valueOf(suctemp.getFechaApertura()));
                 lblCorreo.setText(suctemp.getCorreo());
-                lblGerente.setText(suctemp.getGerente());
+                lblGerente.setText(String.valueOf(suctemp.getGerente()));
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }

@@ -1,9 +1,6 @@
 
 package Sucursal;
 
-import Producto.*;
-import Producto.Producto_Model;
-import java.awt.Dimension;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -363,8 +360,8 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
                 lblDireccion.setText(suctemp.getDireccion());
                 lblCorreo.setText(suctemp.getCorreo());
                 txtCorreo.setText(suctemp.getCorreo());
-                lblGerente.setText(suctemp.getGerente());
-                txtGerente.setText(suctemp.getGerente());
+                lblGerente.setText(String.valueOf(suctemp.getGerente()));
+                txtGerente.setText(String.valueOf(suctemp.getGerente()));
                 lblTelefono.setText(suctemp.getTelefono());
                 txtTelefono.setText(suctemp.getTelefono());
         } catch (SQLException ex) {
@@ -375,7 +372,7 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         try {
         int id = Integer.parseInt(txtId.getText());
-        String nuevoGerente = txtGerente.getText();
+        int nuevoGerente = Integer.parseInt(txtGerente.getText());
         String nuevoTelefono = txtTelefono.getText();
         String nuevoCorreo = txtCorreo.getText();
 

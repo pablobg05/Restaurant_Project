@@ -202,7 +202,7 @@ public class Ingreso_Sucursal extends javax.swing.JInternalFrame {
             String direccion = txtDireccion.getText();
             String telefono = txtTelefono.getText();
             String correo = txtCorreo.getText();
-            String gerente = txtGerente.getText();
+            int gerente = Integer.parseInt(txtGerente.getText());
             
             
             controller.ingresarSucursal(nombre, direccion, telefono, correo, gerente);
