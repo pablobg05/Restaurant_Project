@@ -5,11 +5,8 @@
 package Inicio;
 
 import conexion.CreateConnection;
+import Sucursales.MenuSucursal;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author panba
@@ -104,9 +101,9 @@ public class Login extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery();
             
             if(rs.next()){
-               MenuPrincipal menu = new MenuPrincipal();
-               menu.setLocationRelativeTo(null);
-               menu.setVisible(true);
+               MenuSucursal sucursal = new MenuSucursal();
+               sucursal.setLocationRelativeTo(null);
+               sucursal.setVisible(true);
                
                this.setVisible(false);
             } else {

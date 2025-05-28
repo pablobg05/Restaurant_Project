@@ -19,9 +19,9 @@ public class CreateConnection {
     
     public CreateConnection(){
         InputStream in = null;
-//        String path = "C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\src\\conexion\\config.properties";
+        String path = "C:\\Users\\panba\\OneDrive\\Documentos\\UMG\\Semestre 3\\Progra I\\Restaurant_Project\\src\\conexion\\config.properties";
 //        String path = "C:\\Users\\Carmen y Vanessa\\Documents\\NetBeansProjects\\Restaurant_Project\\src\\conexion\\localconfig.properties";
-        String path = "E:\\Pablo_Bailey_Lenovo\\Documents\\NetBeansProjects\\Restaurant_Project_\\src\\conexion\\config.properties";
+//        String path = "E:\\Pablo_Bailey_Lenovo\\Documents\\NetBeansProjects\\Restaurant_Project_\\src\\conexion\\config.properties";
         //String path = "D:\\Usuario\\Documents\\NetBeansProjects\\Restaurant_Project\\src\\conexion\\localconfig.properties";
         try {
             in = Files.newInputStream(Paths.get(path));
