@@ -1,5 +1,5 @@
 
-package Sucursales;
+package Sucursal;
 import Producto.*;
 import java.sql.SQLException;
 import java.util.List;
@@ -26,8 +26,8 @@ public class Sucursal_Controller {
         dao.eliminar(suc);
     }
 
-    public void actualizarInformacion(int id, String nuevoTelefono, String nuevoGerente) {
-        Sucursal_Model suc = new Sucursal_Model(id, nuevoTelefono, nuevoGerente);
+    public void actualizarInformacion(int id, String nuevoTelefono, String nuevoGerente, String nuevoCorreo) {
+        Sucursal_Model suc = new Sucursal_Model(id, nuevoTelefono, nuevoGerente, nuevoCorreo);
         dao.actualizar(suc);
     }
 }

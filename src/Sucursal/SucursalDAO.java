@@ -1,11 +1,9 @@
 
-package Sucursales;
+package Sucursal;
 import conexion.CreateConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class SucursalDAO {
     private CreateConnection config = new CreateConnection();
@@ -123,7 +121,8 @@ public class SucursalDAO {
 
             ps.setString(1, suc.getTelefono());
             ps.setString(2, suc.getGerente());
-            ps.setInt(3, suc.getId());
+            ps.setString(3, suc.getCorreo());
+            ps.setInt(4, suc.getId());
 
             ps.executeUpdate();
 

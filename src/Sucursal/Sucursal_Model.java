@@ -1,5 +1,5 @@
 
-package Sucursales;
+package Sucursal;
 
 import Producto.*;
 import java.util.Date;
@@ -42,10 +42,11 @@ public class Sucursal_Model {
         this.fechaApertura = fecha;
     }
     
-    public Sucursal_Model (int id, String telefono, String gerente){
+    public Sucursal_Model (int id, String telefono, String gerente, String correo){
         this.id = id;
         this.telefono = telefono;
         this.gerente= gerente;
+        this.correo = correo;
     }
     
     public Sucursal_Model (int id){

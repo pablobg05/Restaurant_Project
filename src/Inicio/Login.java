@@ -5,7 +5,7 @@
 package Inicio;
 
 import conexion.CreateConnection;
-import Sucursales.MenuSucursal;
+import Sucursal.MenuSucursal;
 import java.sql.*;
 /**
  *

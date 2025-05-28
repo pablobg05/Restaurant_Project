@@ -4,11 +4,8 @@
  */
 package SelecSucursal;
 
-import java.awt.BorderLayout;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
