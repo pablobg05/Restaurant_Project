@@ -4,8 +4,6 @@
  */
 package Inventario;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;

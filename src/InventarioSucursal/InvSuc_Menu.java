@@ -2,10 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Inventario;
+package InventarioSucursal;
 
-import Empleado.*;
-import Producto.*;
 import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,16 +11,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class Menu_Inventario extends javax.swing.JFrame {
+public class InvSuc_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuProducto
      */
-    public Menu_Inventario() {
+    public InvSuc_Menu() {
         initComponents();
     }
 
-    private final Producto_Controller controller = new Producto_Controller();
+    private final InvSuc_Controller controller = new InvSuc_Controller();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,9 +32,12 @@ public class Menu_Inventario extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         Informacion = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        añadirStock = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -84,6 +85,18 @@ public class Menu_Inventario extends javax.swing.JFrame {
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        añadirStock.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        añadirStock.setForeground(new java.awt.Color(255, 255, 255));
+        añadirStock.setText("Añadir Stock");
+        añadirStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        añadirStock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                añadirStockMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -99,22 +112,29 @@ public class Menu_Inventario extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Informacion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(añadirStock, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(291, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ingreso)
-                            .addComponent(Edicion)
-                            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(Informacion)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(añadirStock)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ingreso)
+                                .addComponent(Edicion)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(2, 2, 2)
+                            .addComponent(Informacion))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -125,13 +145,16 @@ public class Menu_Inventario extends javax.swing.JFrame {
         panel.setMinimumSize(new java.awt.Dimension(924, 364));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel1.setText("1. Ingresar nuevos Ingredientes.");
+        jLabel1.setText("1. Ingresar nuevos empleados.");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         jLabel3.setText("Dentro de este menú podrás:");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        jLabel4.setText("3. Consultar información sobre los empleados.");
+
         jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel5.setText("2. Editar la información de los Ingredientes existentes.");
+        jLabel5.setText("2. Editar la información de los empleados existentes.");
 
         jPanel2.setBackground(new java.awt.Color(135, 114, 89));
         jPanel2.setForeground(new java.awt.Color(215, 207, 191));
@@ -201,7 +224,7 @@ public class Menu_Inventario extends javax.swing.JFrame {
         );
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel7.setText("3. Consultar el inventario de ingredientes.");
+        jLabel7.setText("4. Consultar el inventario de ingredientes.");
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
@@ -220,8 +243,9 @@ public class Menu_Inventario extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
+                            .addComponent(jLabel4)
                             .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)))
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -236,7 +260,9 @@ public class Menu_Inventario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(panelLayout.createSequentialGroup()
@@ -293,6 +319,18 @@ public class Menu_Inventario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_InformacionMouseClicked
 
+    private void añadirStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadirStockMouseClicked
+        panel.removeAll(); // Elimina componentes anteriores
+        panel.revalidate(); // Revalida layout
+        panel.repaint(); // Redibuja el panel
+
+        Stock_Ingredientes tabla = new Stock_Ingredientes();
+
+        panel.add(tabla);
+        tabla.show(true); 
+        tabla.setLocation(0, 15);
+    }//GEN-LAST:event_añadirStockMouseClicked
+
     
     
     
@@ -310,14 +348,22 @@ public class Menu_Inventario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu_Inventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu_Inventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu_Inventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu_Inventario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -330,7 +376,7 @@ public class Menu_Inventario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu_Inventario().setVisible(true);
+                new InvSuc_Menu().setVisible(true);
             }
         });
     }
@@ -338,9 +384,11 @@ public class Menu_Inventario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Edicion;
     private javax.swing.JLabel Informacion;
+    private javax.swing.JLabel añadirStock;
     private javax.swing.JLabel ingreso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -351,6 +399,7 @@ public class Menu_Inventario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }

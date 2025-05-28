@@ -32,7 +32,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtId = new javax.swing.JTextField();
-        txtStock = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -42,7 +41,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         txtPrecio = new javax.swing.JTextField();
         btnEliminar = new javax.swing.JButton();
         lblPrecio = new javax.swing.JLabel();
-        lblStock = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -50,7 +48,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         taDescripcion2 = new javax.swing.JTextArea();
         Message = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -58,7 +55,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -72,13 +68,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
-            }
-        });
-
-        txtStock.setBackground(new java.awt.Color(241, 235, 196));
-        txtStock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtStockActionPerformed(evt);
             }
         });
 
@@ -135,11 +124,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         lblPrecio.setText("...");
         lblPrecio.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        lblStock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblStock.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblStock.setText("...");
-        lblStock.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel13.setText("Nueva información:");
 
@@ -164,9 +148,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         Message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Message.setText("...");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel14.setText("Stock:");
-
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel25.setText("Descripción:");
 
@@ -175,17 +156,11 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblStock, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,9 +195,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
                             .addGap(90, 90, 90)
                             .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(225, 225, 225)
-                            .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(35, 35, 35)
                             .addComponent(Message, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(0, 66, Short.MAX_VALUE)))
@@ -230,11 +202,7 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(205, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(lblStock))
-                .addGap(27, 27, 27)
+                .addContainerGap(252, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,9 +231,7 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
                         .addComponent(jLabel15)
                         .addComponent(lblPrecio)
                         .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(112, 112, 112)
+                    .addGap(152, 152, 152)
                     .addComponent(Message)
                     .addGap(0, 21, Short.MAX_VALUE)))
         );
@@ -293,15 +259,11 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel21.setText("a) Precio");
-        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 167, -1, -1));
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel22.setText("b) Stock");
-        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 193, -1, -1));
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel24.setText("d) Descripción");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 225, -1, -1));
+        jLabel24.setText("b) Descripción");
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel27.setText("#El precio y descripción se reemplazará por el nuevo");
@@ -320,10 +282,6 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
 
-    private void txtStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStockActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtStockActionPerformed
-
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try{
             int id = Integer.parseInt(txtId.getText());
@@ -335,9 +293,9 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
             txtPrecio.setText(price);
             taDescripcion.setText(prodtemp.getDescripcion());
             taDescripcion2.setText(prodtemp.getDescripcion());
-            String cant = String.valueOf(prodtemp.getStock());
-            lblStock.setText(cant);
-            txtStock.setText(cant);
+//            String cant = String.valueOf(prodtemp.getStock());
+//            lblStock.setText(cant);
+//            txtStock.setText(cant);
             String sells = String.valueOf(prodtemp.getCompras());
             Message.setText("...");
         } catch (SQLException ex) {
@@ -348,18 +306,18 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         int id = Integer.parseInt(txtId.getText());
 
-        int stock = Integer.parseInt(txtStock.getText());
+//        int stock = Integer.parseInt(txtStock.getText());
         double precio = Double.parseDouble(txtPrecio.getText());
         String descripcionActual = taDescripcion2.getText();
 
         // Datos actuales (antes de actualizar)
-        int stockActual = Integer.parseInt(lblStock.getText());
+//        int stockActual = Integer.parseInt(lblStock.getText());
         double precioActual = Double.parseDouble(lblPrecio.getText());
 
         // Mostrar mensaje de confirmación antes de actualizar
         String mensaje = "¿Está seguro que desea editar completamente este producto?\n\n"
-                       + "Stock actual: " + stockActual + "\n"
-                       + "Nuevo stock: " + stock + "\n\n"
+//                       + "Stock actual: " + stockActual + "\n"
+//                       + "Nuevo stock: " + stock + "\n\n"
                        + "Precio actual: Q" + precioActual + "\n"
                        + "Nuevo precio: Q" + precio + "\n\n"
                        + "Descripción nueva: " + descripcionActual;
@@ -371,11 +329,11 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         if (respuesta == JOptionPane.YES_OPTION) {
             // Crear el producto actual con ID incluido
             Inventario_Model productoActual = new Inventario_Model(id);
-            productoActual.setStock(stockActual);
+//            productoActual.setStock(stockActual);
             productoActual.setPrecio(precioActual);
             int compras = 0;
 
-            controller.reemplazarStock(id, stock, precio, descripcionActual);
+            controller.reemplazarStock(id, precio, descripcionActual);
             limpiar();
             Message.setText("Producto actualizado");
         }
@@ -402,7 +360,7 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
         lblProducto.setText("  ");
         txtPrecio.setText(" ");
         txtPrecio.setText(" ");
-        txtStock.setText(" ");
+//        txtStock.setText(" ");
         taDescripcion2.setText(" ");
     }
     
@@ -415,14 +373,12 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -434,11 +390,9 @@ public class Edicion_Ingredientes extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblProducto;
-    private javax.swing.JLabel lblStock;
     private javax.swing.JTextArea taDescripcion;
     private javax.swing.JTextArea taDescripcion2;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtPrecio;
-    private javax.swing.JTextField txtStock;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,18 +26,18 @@ public class Inventario_Controller {
         dao.eliminar(prd);
     }
     
-    public void actualizarInformacion(int id, int compras, int stock, double precio, String descripcionActual, Inventario_Model productoActual) {
-      dao.actualizarInformacion(productoActual, compras, stock, precio, descripcionActual);
+    public void actualizarInformacion(int id, int compras, /*int stock,*/ double precio, String descripcionActual, Inventario_Model productoActual) {
+      dao.actualizarInformacion(productoActual, compras, /*stock,*/ precio, descripcionActual);
     }
     
-    public void sumarStock(int id, int cantidadASumar) {
-        Inventario_Model prod = new Inventario_Model();
-        prod.setId(id);
-        dao.actualizarSTOCK(prod, cantidadASumar);
-    }
+//    public void sumarStock(int id, int cantidadASumar) {
+//        Inventario_Model prod = new Inventario_Model();
+//        prod.setId(id);
+//        dao.actualizarSTOCK(prod, cantidadASumar);
+//    }
     
-    public void reemplazarStock(int id, int nuevoStock, double precio, String descripcion) {
+    public void reemplazarStock(int id, /*int nuevoStock,*/ double precio, String descripcion) {
         int compras = 0;
-        dao.reemplazarSTOCK(id, nuevoStock, precio, descripcion, compras);
+        dao.reemplazarSTOCK(id, /*nuevoStock,*/ precio, descripcion, compras);
     }
 }
