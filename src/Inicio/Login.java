@@ -5,7 +5,8 @@
 package Inicio;
 
 import conexion.CreateConnection;
-import Sucursales.MenuSucursal;
+import Sucursal.*;
+import SelecSucursal.*;
 import java.sql.*;
 /**
  *
@@ -101,12 +102,20 @@ public class Login extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery();
             
             if(rs.next()){
-               MenuSucursal sucursal = new MenuSucursal();
-               sucursal.setLocationRelativeTo(null);
-               sucursal.setVisible(true);
+                if(user.equals("admin")){
+                    MenuSucursal sucursal = new MenuSucursal();
+                    sucursal.setLocationRelativeTo(null);
+                    sucursal.setVisible(true);
                
-               this.setVisible(false);
-            } else {
+                    this.setVisible(false);
+                } else if(!user.equals("admin")){
+                    Seleccionar_Sucursal sucursal = new Seleccionar_Sucursal();
+                    sucursal.setLocationRelativeTo(null);
+                    sucursal.setVisible(true);
+                    
+                    this.setVisible(false);
+                }
+            } else{
                 System.out.println("Credenciales incorrectas");
             }
         } catch (SQLException ex) {
