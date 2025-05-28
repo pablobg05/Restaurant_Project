@@ -30,7 +30,7 @@ public class SucursalDAO {
                     rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("direccion"),
-                    rs.getInt("telefono"),
+                    rs.getString("telefono"),
                     rs.getString("correo"),
                     rs.getString("gerente"),
                     rs.getDate("fechaApertura")
@@ -57,7 +57,7 @@ public class SucursalDAO {
                 suc.setId(rs.getInt("id"));
                 suc.setNombre(rs.getString("nombre"));
                 suc.setDireccion(rs.getString("direccion"));
-                suc.setTelefono(rs.getInt("telefono"));
+                suc.setTelefono(rs.getString("telefono"));
                 suc.setCorreo(rs.getString("correo"));
                 suc.setGerente(rs.getString("gerente"));
                 suc.setFechaApertura(rs.getDate("fechaApertura"));
@@ -82,7 +82,7 @@ public class SucursalDAO {
 
             ps.setString(1, suc.getNombre());
             ps.setString(2, suc.getDireccion());
-            ps.setInt(3, suc.getTelefono());
+            ps.setString(3, suc.getTelefono());
             ps.setString(4, suc.getCorreo());
             ps.setString(5, suc.getGerente());
 
@@ -123,7 +123,7 @@ public class SucursalDAO {
             ps = con.prepareStatement(query);
 
 
-            ps.setInt(1, suc.getTelefono());
+            ps.setString(1, suc.getTelefono());
             ps.setString(2, suc.getGerente());
             ps.setInt(3, suc.getId());
 
