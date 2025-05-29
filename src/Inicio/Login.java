@@ -103,7 +103,7 @@ public class Login extends javax.swing.JFrame {
             
             if(rs.next()){
                 if(user.equals("admin")){
-                    MenuSucursal sucursal = new MenuSucursal();
+                    MenuAdmin sucursal = new MenuAdmin();
                     sucursal.setLocationRelativeTo(null);
                     sucursal.setVisible(true);
                

@@ -1,6 +1,7 @@
 
 package Inicio;
 import SelectInventario.*;
+import InventarioSucursal.*;
 import SelecSucursal.*;
 import Venta.Venta_View;
 import javax.swing.JFrame;
@@ -28,7 +29,9 @@ public class MenuUsuario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblinbGeneral = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        lblinvSucursal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -39,7 +42,7 @@ public class MenuUsuario extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 683, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 683, -1));
 
         jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 40)); // NOI18N
         jLabel3.setText("Cerrar Sesión");
@@ -48,7 +51,7 @@ public class MenuUsuario extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 310, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 310, -1));
 
         jPanel2.setBackground(new java.awt.Color(212, 202, 180));
 
@@ -73,14 +76,28 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 40)); // NOI18N
-        jLabel4.setText("Inventario");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblinbGeneral.setFont(new java.awt.Font("Tempus Sans ITC", 1, 40)); // NOI18N
+        lblinbGeneral.setText("Inventario general");
+        lblinbGeneral.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lblinbGeneralMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 214, -1));
+        jPanel1.add(lblinbGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 370, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 683, -1));
+
+        lblinvSucursal.setFont(new java.awt.Font("Tempus Sans ITC", 1, 40)); // NOI18N
+        lblinvSucursal.setText("Inventario sucursal");
+        lblinvSucursal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblinvSucursalMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblinvSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 370, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 390));
 
@@ -94,12 +111,20 @@ public class MenuUsuario extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lblinbGeneralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinbGeneralMouseClicked
         Informacion_Ingredientes select = new Informacion_Ingredientes();
         select.setVisible(true);
-//        producto.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         select.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lblinbGeneralMouseClicked
+
+    private void lblinvSucursalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinvSucursalMouseClicked
+        InvSuc_Menu select = new InvSuc_Menu();
+        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        select.setVisible(true);
+
+        select.setLocationRelativeTo(null);
+    }//GEN-LAST:event_lblinvSucursalMouseClicked
 
     /**
      * @param args the command line arguments
@@ -111,9 +136,11 @@ public class MenuUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lblinbGeneral;
+    private javax.swing.JLabel lblinvSucursal;
     // End of variables declaration//GEN-END:variables
 }

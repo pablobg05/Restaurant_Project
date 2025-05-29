@@ -1,7 +1,9 @@
 
 package Inicio;
 import InventarioSucursal.*;
-import SelecSucursal.*;
+import Sucursal.*;
+import Inventario.*;
+import Empleado.*;
 import Venta.Venta_View;
 import javax.swing.JFrame;
 
@@ -125,25 +127,35 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        Informacion_Ingredientes select = new Informacion_Ingredientes();
+        MenuEmpleado select = new MenuEmpleado();
+        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         select.setVisible(true);
 
         select.setLocationRelativeTo(null);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
+        MenuSucursal select = new MenuSucursal();
+        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        select.setVisible(true);
+
+        select.setLocationRelativeTo(null);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        Informacion_Ingredientes select = new Informacion_Ingredientes();
+        Menu_Inventario select = new Menu_Inventario();
+        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         select.setVisible(true);
 
         select.setLocationRelativeTo(null);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        // TODO add your handling code here:
+        InvSuc_Menu select = new InvSuc_Menu();
+        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        select.setVisible(true);
+
+        select.setLocationRelativeTo(null);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
