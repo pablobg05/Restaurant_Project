@@ -1,4 +1,4 @@
-package ASDFASDF;
+package SelectInventarioSucursal;
 
 import java.sql.*;
 import java.util.*;

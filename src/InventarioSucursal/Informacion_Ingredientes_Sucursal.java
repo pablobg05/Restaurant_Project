@@ -4,9 +4,7 @@
  */
 package InventarioSucursal;
 
-import ASDFASDF.SELECT_INFO_INGRED_SUC;
-import ASDFASDF.InvSuc_Model;
-import ASDFASDF.InvSuc_Controller;
+import SelectInventarioSucursal.*;
 import java.sql.*;
 import java.util.*;
 
@@ -14,11 +12,11 @@ import java.util.*;
  *
  * @author Usuario
  */
-public class Informacion_Ingredientes_SucursalAAA extends javax.swing.JInternalFrame {
+public class Informacion_Ingredientes_Sucursal extends javax.swing.JInternalFrame {
 
     private final InvSuc_Controller controller = new InvSuc_Controller();
     
-    public Informacion_Ingredientes_SucursalAAA() {
+    public Informacion_Ingredientes_Sucursal() {
         initComponents();
         cargarTabla();
     }
@@ -2394,7 +2392,7 @@ public class Informacion_Ingredientes_SucursalAAA extends javax.swing.JInternalF
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Informacion_Ingredientes_SucursalAAA().setVisible(true);
+                new Informacion_Ingredientes_Sucursal().setVisible(true);
             }
         });
     }

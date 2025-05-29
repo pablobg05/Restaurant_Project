@@ -1,6 +1,5 @@
 package InventarioSucursal;
 
-import ASDFASDF.InvSuc_Model;
 import java.sql.*;
 import java.util.*;
 import conexion.*;

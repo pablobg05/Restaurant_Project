@@ -1,4 +1,4 @@
-package ASDFASDF;
+package SelectInventarioSucursal;
 
 public class InvSuc_Model {
     int id;

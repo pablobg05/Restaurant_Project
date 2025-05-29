@@ -4,7 +4,7 @@
  */
 package InventarioSucursal;
 
-
+import SelectInventarioSucursal.*;
 
 public class InvSuc_Menu extends javax.swing.JFrame {
 
@@ -261,7 +261,7 @@ public class InvSuc_Menu extends javax.swing.JFrame {
         panel.revalidate(); // Revalida el panel para actualizar el layout
         panel.repaint(); // Repinta el panel para reflejar los cambios
 
-        Select_Informacion_Ingredientes_Sucursal interfaz = new Select_Informacion_Ingredientes_Sucursal();
+        Informacion_Ingredientes_Sucursal interfaz = new Informacion_Ingredientes_Sucursal();
         panel.setSize(panel.getWidth(), panel.getHeight());
         panel.add(interfaz);
         interfaz.show();

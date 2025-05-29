@@ -1,9 +1,6 @@
 
 package Inicio;
 import SelectInventario.*;
-import InventarioSucursal.*;
-import SelecSucursal.*;
-import Venta.Venta_View;
 import javax.swing.JFrame;
 import SelectInventarioSucursal.*;
 
@@ -119,7 +116,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblinbGeneralMouseClicked
 
     private void lblinvSucursalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinvSucursalMouseClicked
-        SELECT_INFO_INFRED_SUC select = new SELECT_INFO_INFRED_SUC();
+        SELECT_INFO_INGRED_SUC select = new SELECT_INFO_INGRED_SUC();
         select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         select.setVisible(true);
 
