@@ -1,6 +1,8 @@
 
 package Inventario;
 
+
+
 import java.awt.Dimension;
 import java.sql.SQLException;
 import java.util.logging.Level;

@@ -4,6 +4,8 @@
  */
 package Inventario;
 
+import Inventario.Informacion_Ingredientes;
+import Inventario.Edicion_Ingredientes;
 import Empleado.*;
 import Producto.*;
 import java.beans.PropertyVetoException;
