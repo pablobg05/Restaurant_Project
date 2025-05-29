@@ -1,6 +1,7 @@
 
 package InventarioSucursal;
 
+import ASDFASDF.InvSuc_Controller;
 import java.sql.SQLException;
 
 
