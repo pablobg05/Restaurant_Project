@@ -5,7 +5,11 @@ import com.lowagie.text.*;
 import com.lowagie.text.pdf.*;
 import java.io.FileOutputStream;
 import java.sql.*;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+
 
 public class GeneradorFacturaPDF {
 
@@ -33,15 +37,31 @@ public class GeneradorFacturaPDF {
             PdfWriter.getInstance(document, fos);
             document.open();
 
-            document.add(new Paragraph("Factura - Mesa " + noMesa, FontFactory.getFont(FontFactory.HELVETICA_BOLD, 16)));
-            document.add(new Paragraph("Fecha: " + new Date().toString()));
+            // Título
+            Font tituloFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18);
+            Paragraph titulo = new Paragraph("Factura - Mesa " + noMesa, tituloFont);
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            document.add(titulo);
+
+            // Fecha
+            Font fechaFont = FontFactory.getFont(FontFactory.HELVETICA, 12);
+            Paragraph fecha = new Paragraph("Fecha: " + new Date().toString(), fechaFont);
+            fecha.setAlignment(Element.ALIGN_CENTER);
+            document.add(fecha);
+
             document.add(new Paragraph(" ")); // espacio
 
+            // Tabla con 4 columnas
             PdfPTable table = new PdfPTable(4);
-            table.addCell("Producto");
-            table.addCell("Cantidad");
-            table.addCell("Precio Unitario");
-            table.addCell("Subtotal");
+            table.setWidthPercentage(100);
+            table.setWidths(new float[]{4, 1, 2, 2});
+
+            // Encabezados de la tabla
+            Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12);
+            table.addCell(new PdfPCell(new Phrase("Producto", headerFont)));
+            table.addCell(new PdfPCell(new Phrase("Cantidad", headerFont)));
+            table.addCell(new PdfPCell(new Phrase("Precio Unitario", headerFont)));
+            table.addCell(new PdfPCell(new Phrase("Subtotal", headerFont)));
 
             double total = 0;
 
@@ -51,10 +71,10 @@ public class GeneradorFacturaPDF {
                 double precio = rs.getDouble("precio");
                 double subtotal = precio * cantidad;
 
-                table.addCell(producto);
-                table.addCell(String.valueOf(cantidad));
-                table.addCell(String.format("$%.2f", precio));
-                table.addCell(String.format("$%.2f", subtotal));
+                table.addCell(new PdfPCell(new Phrase(producto)));
+                table.addCell(new PdfPCell(new Phrase(String.valueOf(cantidad))));
+                table.addCell(new PdfPCell(new Phrase(String.format("Q %.2f", precio))));
+                table.addCell(new PdfPCell(new Phrase(String.format("Q %.2f", subtotal))));
 
                 total += subtotal;
             }
@@ -62,7 +82,12 @@ public class GeneradorFacturaPDF {
             document.add(table);
 
             document.add(new Paragraph(" "));
-            document.add(new Paragraph("TOTAL: $" + String.format("%.2f", total), FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14)));
+
+            // Total
+            Font totalFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14);
+            Paragraph totalParrafo = new Paragraph("TOTAL: Q " + String.format("%.2f", total), totalFont);
+            totalParrafo.setAlignment(Element.ALIGN_RIGHT);
+            document.add(totalParrafo);
 
             document.close();
             System.out.println("Factura generada exitosamente en: " + rutaSalida);
