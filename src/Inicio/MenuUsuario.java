@@ -6,16 +6,16 @@ import Venta.Venta_View;
 import javax.swing.JFrame;
 
 
-public class MenuPrincipal extends javax.swing.JFrame {
+public class MenuUsuario extends javax.swing.JFrame {
     private int sucursalId;
  
-    public MenuPrincipal(int idSucursal) {
+    public MenuUsuario(int idSucursal) {
         this.sucursalId = idSucursal;
         initComponents();
         System.out.println("id: "+ sucursalId);
     }
 
-    public MenuPrincipal() {
+    public MenuUsuario() {
         initComponents();
     }
  
@@ -105,7 +105,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        new MenuPrincipal().setVisible(true);
+        new MenuUsuario().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -10,11 +10,11 @@ import java.util.List;
 import javax.swing.SwingUtilities;
 import java.awt.Window;
 import javax.swing.JFrame;
-import Inicio.MenuPrincipal;
+import Inicio.MenuUsuario;
 import javax.swing.JFrame;
 
 public class Sucursal_List extends javax.swing.JInternalFrame {
-    //MenuPrincipal menu = new MenuPrincipal();
+    //MenuPrincipal menu = new MenuUsuario();
     private final Sucursal_Controller controller = new Sucursal_Controller();
     
     public Sucursal_List() {
@@ -425,7 +425,7 @@ public class Sucursal_List extends javax.swing.JInternalFrame {
                 parentWindow.dispose();
             }  
 
-            Inicio.MenuPrincipal menu = new Inicio.MenuPrincipal(idSucursal);
+            Inicio.MenuUsuario menu = new Inicio.MenuUsuario(idSucursal);
             menu.setVisible(true); 
         }
 
