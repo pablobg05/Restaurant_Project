@@ -1,0 +1,7 @@
+/build/
+/nbproject/private/
+
+src/conexion/Conexion.java
+src/conexion/CreateConnection.java
+src/conexion/config.properties
+src/conexion/localconfig.properties
