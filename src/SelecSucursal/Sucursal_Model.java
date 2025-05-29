@@ -102,6 +102,10 @@ public class Sucursal_Model {
         this.gerente = gerente;
     }
 
+
+
+
+
     public Date getFechaApertura() {
         return fechaApertura;
     }
