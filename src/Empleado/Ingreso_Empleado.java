@@ -28,12 +28,12 @@ public class Ingreso_Empleado extends javax.swing.JInternalFrame {
         txtApellido1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        dcStart = new com.toedter.calendar.JDateChooser();
         txtApellido = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
         txtPuesto = new javax.swing.JTextField();
         Message = new javax.swing.JLabel();
+        dcStart = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(188, 174, 146));
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -69,12 +69,6 @@ public class Ingreso_Empleado extends javax.swing.JInternalFrame {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel15.setText("Puesto:");
-
-        dcStart.setBackground(new java.awt.Color(221, 214, 166));
-        dcStart.setForeground(new java.awt.Color(221, 214, 166));
-        dcStart.setDateFormatString("yyyy-MM-dd");
-        dcStart.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        dcStart.setFont(new java.awt.Font("UD Digi Kyokasho NK", 0, 12)); // NOI18N
 
         txtApellido.setBackground(new java.awt.Color(241, 235, 196));
 
@@ -116,14 +110,14 @@ public class Ingreso_Empleado extends javax.swing.JInternalFrame {
                         .addGap(206, 206, 206)
                         .addComponent(jLabel10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(dcStart, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(236, 236, 236)
+                        .addComponent(Message, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(355, 355, 355)
                         .addComponent(btnAgregar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(Message, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(301, 301, 301)
+                        .addComponent(dcStart, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(193, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -143,9 +137,9 @@ public class Ingreso_Empleado extends javax.swing.JInternalFrame {
                     .addComponent(jLabel14)
                     .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApellido1))
-                .addGap(32, 32, 32)
+                .addGap(34, 34, 34)
                 .addComponent(dcStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAgregar)
                 .addGap(18, 18, 18)
                 .addComponent(Message)
