@@ -1,7 +1,6 @@
 
 package Producto;
 import conexion.CreateConnection;
-import conexion.CreateConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
@@ -37,7 +36,7 @@ public class ProductoDAO {
             lista.add(prd);
             }
         }catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return lista;
     }
