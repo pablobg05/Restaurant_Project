@@ -4,7 +4,7 @@
  */
 package SelectInventario;
 
-import Inventario.*;
+import Inventario.Menu_Inventario;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.sql.SQLException;
