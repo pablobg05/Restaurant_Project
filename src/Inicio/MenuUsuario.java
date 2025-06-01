@@ -1,5 +1,6 @@
 
 package Inicio;
+import Factura.FacturacionView;
 import SelectInventario.*;
 import javax.swing.JFrame;
 import SelectInventarioSucursal.*;
@@ -12,9 +13,11 @@ public class MenuUsuario extends javax.swing.JFrame {
         initComponents();
         System.out.println("id: "+ sucursalId);
     }
+    
 
     public MenuUsuario() {
         initComponents();
+
     }
  
     @SuppressWarnings("unchecked")
@@ -120,7 +123,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblinbGeneralMouseClicked
 
     private void lblinvSucursalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinvSucursalMouseClicked
-        SELECT_INFO_INGRED_SUC select = new SELECT_INFO_INGRED_SUC();
+        SELECT_INFO_INGRED_SUCCC select = new SELECT_INFO_INGRED_SUCCC(sucursalId);
         select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         select.setVisible(true);
 
@@ -128,7 +131,10 @@ public class MenuUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblinvSucursalMouseClicked
 
     private void lblinbGeneral1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblinbGeneral1MouseClicked
-        // TODO add your handling code here:
+        FacturacionView select = new FacturacionView();
+        select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        select.setVisible(true);
+        select.setLocationRelativeTo(null);
     }//GEN-LAST:event_lblinbGeneral1MouseClicked
 
     /**

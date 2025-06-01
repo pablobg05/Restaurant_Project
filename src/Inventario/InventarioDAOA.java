@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class InventarioDAO {
+public class InventarioDAOA {
     private CreateConnection config = new CreateConnection();
     Connection con;
     ResultSet rs;
@@ -16,8 +16,8 @@ public class InventarioDAO {
     
     String query;
     
-    public List<Inventario_Model> obtenerTodos() {
-        List<Inventario_Model> lista = new ArrayList<>();
+    public List<Inventario_ModelA> obtenerTodos() {
+        List<Inventario_ModelA> lista = new ArrayList<>();
         query = "select * from inventario";
         
         try(Connection conn = config.getConnection();
@@ -25,7 +25,7 @@ public class InventarioDAO {
             ResultSet rs = stmt.executeQuery()){
             
             while (rs.next()){
-                Inventario_Model prd = new Inventario_Model(
+                Inventario_ModelA prd = new Inventario_ModelA(
                 rs.getInt("id"),
                 rs.getString("marca"),
                 rs.getString("ingrediente"),
@@ -42,8 +42,8 @@ public class InventarioDAO {
         return lista;
     }
     
-    public Inventario_Model obtenerUno(int id){
-        Inventario_Model prd = new Inventario_Model();
+    public Inventario_ModelA obtenerUno(int id){
+        Inventario_ModelA prd = new Inventario_ModelA();
         
         try {
              
@@ -74,7 +74,7 @@ public class InventarioDAO {
         return prd;
     }
     
-    public boolean guardar (Inventario_Model prd){
+    public boolean guardar (Inventario_ModelA prd){
         try {
 //            query = "insert into producto (marca, producto, precio, descripcion) values (?,?,?,?);";
             query = "insert into inventario (marca, ingrediente, precio, descripcion) values (?,?,?,?);";
@@ -92,7 +92,7 @@ public class InventarioDAO {
             con.close();
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(InventarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InventarioDAOA.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -100,7 +100,7 @@ public class InventarioDAO {
 
     
 
-    public boolean eliminar (Inventario_Model prd){
+    public boolean eliminar (Inventario_ModelA prd){
         try {
 //            query = "delete from producto where id= ?;";
             query = "delete from inventario where id= ?;";
@@ -114,12 +114,12 @@ public class InventarioDAO {
             con.close(); 
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(InventarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InventarioDAOA.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
     
-    public boolean actualizarInformacion(Inventario_Model prd, int comprasNuevas, int stockNuevasEntradas, double nuevoPrecio, String descripcionActual){
+    public boolean actualizarInformacion(Inventario_ModelA prd, int comprasNuevas, int stockNuevasEntradas, double nuevoPrecio, String descripcionActual){
         String query = "UPDATE inventario SET stock = ?, precio = ?, descripcion = ?, compras = ? WHERE id = ?";
     
         try (Connection conn = config.getConnection();
@@ -145,7 +145,7 @@ public class InventarioDAO {
         }
     }
     
-        public boolean actualizarSTOCK(Inventario_Model producto, int cantidadASumar) {
+        public boolean actualizarSTOCK(Inventario_ModelA producto, int cantidadASumar) {
         String query = "UPDATE inventario SET stock = stock + ? WHERE id = ?";
 
         try (Connection conn = config.getConnection();

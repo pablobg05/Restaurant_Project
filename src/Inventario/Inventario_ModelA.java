@@ -2,7 +2,7 @@
 package Inventario;
 
 
-public class Inventario_Model {
+public class Inventario_ModelA {
     private int id;
     private String marca;
     private String ingredientes;
@@ -11,7 +11,7 @@ public class Inventario_Model {
     private int stock;
     private int compras;
     
-    public Inventario_Model(){
+    public Inventario_ModelA(){
         this.id=0;
         this.marca = "";
         this.ingredientes = "";
@@ -21,7 +21,7 @@ public class Inventario_Model {
         this.compras = 0;
     }
     
-    public Inventario_Model(int id, String marca, String ingredientes, double precio, String descripcion, int stock, int compras){
+    public Inventario_ModelA(int id, String marca, String ingredientes, double precio, String descripcion, int stock, int compras){
         this.id = id;
         this.marca = marca;
         this.ingredientes = ingredientes;
@@ -31,26 +31,26 @@ public class Inventario_Model {
         this.compras = compras;
     }
     
-    public Inventario_Model(String marca, String producto, double precio, String descripcion){
+    public Inventario_ModelA(String marca, String producto, double precio, String descripcion){
         this.marca = marca;
         this.ingredientes = producto;
         this.precio = precio;
         this.descripcion = descripcion;
     }
     
-    public Inventario_Model(int id, String descripcion){
+    public Inventario_ModelA(int id, String descripcion){
         this.id = id;
         this.descripcion = descripcion;
     }
     
-    public Inventario_Model(int compras, int stock, double precio, String descripcion){
+    public Inventario_ModelA(int compras, int stock, double precio, String descripcion){
         this.compras = compras;
         this.stock = stock;
         this.precio = precio;
         this.descripcion = descripcion;
     }
     
-    public Inventario_Model (int id){
+    public Inventario_ModelA (int id){
         this.id=id;
     }
     

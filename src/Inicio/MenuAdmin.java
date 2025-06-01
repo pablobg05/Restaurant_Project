@@ -157,7 +157,7 @@ public class MenuAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        Menu_Inventario select = new Menu_Inventario();
+        Menu_InventarioA select = new Menu_InventarioA();
         select.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         select.setVisible(true);
         select.setLocationRelativeTo(null);
