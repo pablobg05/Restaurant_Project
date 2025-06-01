@@ -10,8 +10,7 @@ public class SelectInventario_Model {
     private String ingredientes;
     private double precio;
     private String descripcion;
-//    private int stock;
-    private int compras;
+
     
     public SelectInventario_Model(){
         this.id=0;
@@ -19,18 +18,17 @@ public class SelectInventario_Model {
         this.ingredientes = "";
         this.precio = 0.0;
         this.descripcion = "";
-//        this.stock = 0;
-        this.compras = 0;
+
     }
     
-    public SelectInventario_Model(int id, String marca, String ingredientes, double precio, String descripcion, /*int stock*/ int compras){
+    public SelectInventario_Model(int id, String marca, String ingredientes, double precio, String descripcion){
         this.id = id;
         this.marca = marca;
         this.ingredientes = ingredientes;
         this.precio = precio;
         this.descripcion = descripcion;
-//        this.stock = stock;
-        this.compras = compras;
+
+
     }
     
     public SelectInventario_Model(String marca, String producto, double precio, String descripcion){
@@ -45,9 +43,8 @@ public class SelectInventario_Model {
         this.descripcion = descripcion;
     }
     
-    public SelectInventario_Model(int compras, /*int stock*/ double precio, String descripcion){
-        this.compras = compras;
-//        this.stock = stock;
+    public SelectInventario_Model(double precio, String descripcion){
+
         this.precio = precio;
         this.descripcion = descripcion;
     }
@@ -97,21 +94,6 @@ public class SelectInventario_Model {
         this.descripcion = descripcion;
     }
 
-//    public int getStock() {
-//        return stock;
-//    }
-//
-//    public void setStock(int stock) {
-//        this.stock = stock;
-//    }
-
-    public int getCompras() {
-        return compras;
-    }
-
-    public void setCompras(int compras) {
-        this.compras = compras;
-    }
     
 
 

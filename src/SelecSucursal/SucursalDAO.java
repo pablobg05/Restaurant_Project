@@ -43,7 +43,7 @@ public class SucursalDAO {
         ResultSet rs;
 
         try {
-            query = "SELECT * FROM sucursal WHERE id = ?";
+            query = "SELECT * FROM Sucursal WHERE id = ?";
             con = config.getConnection();
             ps = con.prepareStatement(query);
             ps.setInt(1, id);
@@ -55,8 +55,9 @@ public class SucursalDAO {
                 suc.setDireccion(rs.getString("direccion"));
                 suc.setTelefono(rs.getString("telefono"));
                 suc.setCorreo(rs.getString("correo"));
-                suc.setGerente(rs.getInt("gerente"));
                 suc.setFechaApertura(rs.getDate("fecha_apertura"));
+                suc.setGerente(rs.getInt("id_gerente"));
+                
             }
             rs.close();
             ps.close();

@@ -408,6 +408,7 @@ public class Sucursal_List extends javax.swing.JInternalFrame {
                     lblGerente.setText(String.valueOf(suctemp.getGerente()));
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     lblApertura.setText(String.valueOf(suctemp.getFechaApertura()));
+                    
                 }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

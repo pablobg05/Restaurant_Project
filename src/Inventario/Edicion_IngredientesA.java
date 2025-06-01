@@ -152,8 +152,8 @@ public class Edicion_IngredientesA extends javax.swing.JInternalFrame {
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel26.setText("Información actual:");
 
+        taDescripcion.setBackground(new java.awt.Color(241, 235, 196));
         taDescripcion.setColumns(20);
-        taDescripcion.setForeground(new java.awt.Color(241, 235, 196));
         taDescripcion.setRows(5);
         taDescripcion.setFocusable(false);
         taDescripcion.setOpaque(false);
@@ -162,7 +162,6 @@ public class Edicion_IngredientesA extends javax.swing.JInternalFrame {
 
         taDescripcion2.setBackground(new java.awt.Color(241, 235, 196));
         taDescripcion2.setColumns(20);
-        taDescripcion2.setForeground(new java.awt.Color(241, 235, 196));
         taDescripcion2.setRows(5);
         taDescripcion2.setOpaque(false);
         jScrollPane3.setViewportView(taDescripcion2);

@@ -19,7 +19,6 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Message = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtId = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -41,6 +40,7 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
+        Message = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -52,10 +52,6 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Message.setText("...");
-        getContentPane().add(Message, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 331, 282, -1));
 
         jPanel1.setBackground(new java.awt.Color(227, 219, 192));
 
@@ -163,6 +159,9 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
             }
         });
 
+        Message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Message.setText("...");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -171,6 +170,10 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
                 .addContainerGap(298, Short.MAX_VALUE)
                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(Message, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 23, Short.MAX_VALUE)
@@ -224,7 +227,9 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(238, Short.MAX_VALUE)
                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addGap(44, 44, 44)
+                .addComponent(Message)
+                .addGap(20, 20, 20))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -418,6 +423,8 @@ public class Edicion_Sucursal extends javax.swing.JInternalFrame {
         txtGerente.setText(" ");
         txtGerente.setText(" ");
         txtId.setText(" ");
+        txtTelefono.setText(" ");
+        txtCorreo.setText(" ");
         
     }
     

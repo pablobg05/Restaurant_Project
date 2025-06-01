@@ -31,9 +31,8 @@ public class SelectInventarioDAO {
                 rs.getString("marca"),
                 rs.getString("ingrediente"),
                 rs.getDouble("precio"),
-                rs.getString("descripcion"),
-//                rs.getInt("stock"),
-                rs.getInt("compras")
+                rs.getString("descripcion")
+
                 );
             lista.add(prd);
             }
@@ -61,8 +60,7 @@ public class SelectInventarioDAO {
                 prd.setIngredientes(rs.getString(3));
                 prd.setPrecio(rs.getInt(4));
                 prd.setDescripcion(rs.getString(5));
-//                prd.setStock(rs.getInt(6));
-                prd.setCompras(rs.getInt(7));
+
             }
             rs.close();
             ps.close();
@@ -119,21 +117,21 @@ public class SelectInventarioDAO {
     }
     
     public boolean actualizarInformacion(SelectInventario_Model prd, int comprasNuevas, /*int stockNuevasEntradas,*/ double nuevoPrecio, String descripcionActual){
-        String query = "UPDATE inventario SET precio = ?, descripcion = ?, compras = ? WHERE id = ?";
+        String query = "UPDATE inventario SET precio = ?, descripcion = ? WHERE id = ?";
     
         try (Connection conn = config.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 //            int stock = 0;
             double precio = 0;
             String descripcion = null;
-            int compras = 0;
+
             int id = 0;
             
 //            stmt.setInt(1, stock);         // nuevo stock
             stmt.setDouble(1, precio);
             stmt.setString(2, descripcion);
-            stmt.setInt(3, compras);
-            stmt.setInt(4, id);
+
+            stmt.setInt(3, id);
 
             int filas = stmt.executeUpdate();
             return filas > 0;
@@ -143,48 +141,10 @@ public class SelectInventarioDAO {
             return false;
         }
     }
-    
-//        public boolean actualizarSTOCK(SelectInventario_Model producto, int cantidadASumar) {
-//        String query = "UPDATE inventario SET stock = stock + ? WHERE id = ?";
-//
-//        try (Connection conn = config.getConnection();
-//             PreparedStatement stmt = conn.prepareStatement(query)) {
-//
-//            stmt.setInt(1, cantidadASumar);
-//            stmt.setInt(2, producto.getId());
-//
-//            int filas = stmt.executeUpdate();
-//            return filas > 0;
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//    }
 
     
-//    public int obtenerStockPorID(int id) {
-//        int stock = 0;
-//        String query = "SELECT stock FROM inventario WHERE id = ?";
-//
-//        try (Connection conn = config.getConnection();
-//             PreparedStatement stmt = conn.prepareStatement(query)) {
-//
-//            stmt.setInt(1, id);
-//            try (ResultSet rs = stmt.executeQuery()) {
-//                if (rs.next()) {
-//                    stock = rs.getInt("stock");
-//                }
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return stock;
-//    }
-    
     public boolean reemplazarSTOCK(int id, /*int nuevoStock,*/ double precio, String descripcion, int compras) {
-        String query = "UPDATE inventario SET precio = ?, descripcion = ?, compras = ? WHERE id = ?";
+        String query = "UPDATE inventario SET precio = ?, descripcion = ? WHERE id = ?";
 
         try (Connection conn = config.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -192,8 +152,7 @@ public class SelectInventarioDAO {
 //            stmt.setInt(1, nuevoStock);
             stmt.setDouble(1, precio);
             stmt.setString(2, descripcion);
-            stmt.setInt(3, compras);
-            stmt.setInt(4, id);
+            stmt.setInt(3, id);
 
             int filas = stmt.executeUpdate();
             return filas > 0;

@@ -105,7 +105,7 @@ public class InvSucDAO {
     
     public void updateInventario(InvSuc_Model inv){
         try{
-            query = "update inventario_sucursal set producto, sucursal, cantidad = ? where id = ?";
+            query = "update inventario_sucursal set producto = ?, sucursal = ?, cantidad = ? where id = ?";
             cn = config.getConnection();
             ps = cn.prepareStatement(query);
             
@@ -129,6 +129,7 @@ public class InvSucDAO {
             
             ps.setInt(1, inv.getCantidad());
             ps.setInt(2, inv.getId());
+            ps.executeUpdate();
             
             ps.close();
             cn.close();
@@ -142,8 +143,8 @@ public class InvSucDAO {
     }
     
     public int getStockById(InvSuc_Model inv){
-        int stock = 0;
-        String query = "SELECT stock FROM inventario WHERE id = ?";
+        int stock=0;
+        String query = "SELECT cantidad FROM inventario_sucursal WHERE id = ?";
 
         try (Connection conn = config.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -151,7 +152,9 @@ public class InvSucDAO {
             stmt.setInt(1, inv.getId());
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    stock = rs.getInt("stock");
+                    
+                    stock = rs.getInt("cantidad");
+                    
                 }
             }
         } catch (SQLException e) {
@@ -159,5 +162,26 @@ public class InvSucDAO {
         }
 
         return stock;
+    }
+    
+    public String getProductById(InvSuc_Model inv){
+        String ingrediente = "";
+        String query = "SELECT ingrediente FROM inventario WHERE id = ?";
+
+        try (Connection conn = config.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, inv.getId());
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    ingrediente = rs.getString("ingrediente");
+                    
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ingrediente;
     }
 }

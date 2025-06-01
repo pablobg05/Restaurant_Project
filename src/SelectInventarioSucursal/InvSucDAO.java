@@ -160,4 +160,26 @@ public class InvSucDAO {
 
         return stock;
     }
+    
+    public String getProductById(InvSuc_Model inv){
+        String ingrediente = "";
+        String query = "SELECT ingrediente FROM inventario WHERE id = ?";
+
+        try (Connection conn = config.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, inv.getId());
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    ingrediente = rs.getString("ingrediente");
+                    
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return ingrediente;
+    }
+    
 }

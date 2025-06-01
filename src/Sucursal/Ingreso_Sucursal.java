@@ -207,6 +207,7 @@ public class Ingreso_Sucursal extends javax.swing.JInternalFrame {
             
             controller.ingresarSucursal(nombre, direccion, telefono, correo, gerente);
             Message.setText("Ingresado exitosamente");
+            limpiar();
         } catch (SQLException ex) {
             Logger.getLogger(Ingreso_Sucursal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -230,6 +231,7 @@ public class Ingreso_Sucursal extends javax.swing.JInternalFrame {
         txtNombre.setText(" ");
         txtTelefono.setText(" ");
         txtCorreo.setText(" ");
+        txtGerente.setText(" ");
     }
     
 

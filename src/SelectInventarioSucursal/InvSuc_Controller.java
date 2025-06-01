@@ -42,4 +42,10 @@ public class InvSuc_Controller {
         InvSuc_Model inv = new InvSuc_Model(id);
         return dao.getStockById(inv);
     }
+    
+    public String getProductById(int id) throws SQLException{
+        InvSuc_Model inv = new InvSuc_Model(id);
+        String nombre = dao.getProductById(inv);
+        return nombre;
+    }
 }

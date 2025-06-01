@@ -71,7 +71,7 @@ public class SucursalDAO {
     
      public boolean guardar(Sucursal_Model suc) {
         try {
-            query = "INSERT INTO Sucursal (nombre, direccion, telefono, correo, id_gerente, fecha_apertura) VALUES (?, ?, ?, ?, ?,NOW())";
+            query = "INSERT INTO Sucursal (nombre, direccion, telefono, correo, id_gerente, fecha_apertura) VALUES (?, ?, ?, ?, ?)";
             con = config.getConnection();
             ps = con.prepareStatement(query);
 
@@ -114,7 +114,7 @@ public class SucursalDAO {
     
     public boolean actualizar(Sucursal_Model suc) {
         try {
-            query = "UPDATE Sucursal SET telefono = ?, id_gerente = ? WHERE id = ?";
+            query = "UPDATE Sucursal SET telefono = ?, id_gerente = ?, correo = ? WHERE id = ?";
             con = config.getConnection();
             ps = con.prepareStatement(query);
 

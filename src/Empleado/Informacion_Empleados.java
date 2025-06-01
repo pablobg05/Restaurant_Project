@@ -295,12 +295,12 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
                             .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(20, 20, 20)
-                            .addComponent(jLabel8)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(96, 96, 96)
-                            .addComponent(txtProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGap(0, 44, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -405,7 +405,11 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
                 txtEstado.setText("Baja");
             }
             
-            
+            if(txtSalario!=null){
+                txtProceso.setText("Empleado encontrado");
+            } else {
+                txtProceso.setText("Empleado no existente");
+            }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }

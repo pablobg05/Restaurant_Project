@@ -10,8 +10,9 @@ public class Sucursal_Model {
     private String direccion;
     private String telefono;
     private String correo;
-    private int gerente;
     private Date fechaApertura;
+    private int gerente;
+    
     
     public Sucursal_Model(){
         this.id=0;
@@ -19,8 +20,9 @@ public class Sucursal_Model {
         this.direccion = "";
         this.telefono= "";
         this.correo = "";
-        this.gerente= 0;
         this.fechaApertura = null;
+        this.gerente= 0;
+        
     }
     
     public Sucursal_Model( String nombre, String direccion, String telefono, String correo, int gerente){
@@ -37,8 +39,9 @@ public class Sucursal_Model {
         this.direccion = direccion;
         this.telefono= telefono;
         this.correo = correo;
-        this.gerente= gerente;
         this.fechaApertura = fecha;
+        this.gerente= gerente;
+        
     }
     
     public Sucursal_Model (int id, String telefono, int gerente){
