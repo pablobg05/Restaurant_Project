@@ -409,12 +409,12 @@ public class Edicion_Producto extends javax.swing.JInternalFrame {
         double precio = Double.parseDouble(txtPrecio.getText());
         String descripcionActual = taDescripcion2.getText();
 
-        // Datos actuales (antes de actualizar)
+
         int stockActual = Integer.parseInt(lblStock.getText());
         int comprasActual = Integer.parseInt(lblCompras.getText());
         double precioActual = Double.parseDouble(lblPrecio.getText());
 
-        // Crear el producto actual con ID incluido
+
         Producto_Model productoActual = new Producto_Model(id);
         productoActual.setStock(stockActual);
         productoActual.setCompras(comprasActual);

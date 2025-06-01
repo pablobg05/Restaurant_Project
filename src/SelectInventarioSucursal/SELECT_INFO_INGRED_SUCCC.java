@@ -19,7 +19,7 @@ public class SELECT_INFO_INGRED_SUCCC extends javax.swing.JFrame {
     }
 
     private SELECT_INFO_INGRED_SUCCC() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
     
 

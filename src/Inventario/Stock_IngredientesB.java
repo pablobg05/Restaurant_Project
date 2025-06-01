@@ -531,11 +531,11 @@ public class Stock_IngredientesB extends javax.swing.JInternalFrame {
             int id = Integer.parseInt(ID);
             InventarioDAOA dao = new InventarioDAOA();
 
-            // Obtener el stock actual antes de continuar
-            int stockActual = dao.obtenerStockPorID(id); // Este método debes implementarlo
+
+            int stockActual = dao.obtenerStockPorID(id);
             int nuevoStock = stockActual + cantidad;
 
-            // Mensaje con la suma incluida
+ 
             String mensaje = "El stock actual es: " + stockActual + "\n"
                            + "Cantidad a añadir: " + cantidad + "\n"
                            + "Nuevo stock total será: " + nuevoStock + "\n\n"

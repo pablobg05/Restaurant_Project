@@ -20,9 +20,9 @@ public class Seleccionar_Sucursal extends javax.swing.JFrame {
     public Seleccionar_Sucursal() {
         initComponents();
         try {
-            panel.removeAll(); // Elimina componentes anteriores
-            panel.revalidate(); // Revalida layout
-            panel.repaint(); // Redibuja el panel
+            panel.removeAll(); 
+            panel.revalidate(); 
+            panel.repaint();
             
             Sucursal_List tabla = new Sucursal_List();
             

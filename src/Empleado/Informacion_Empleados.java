@@ -31,22 +31,22 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        id = new javax.swing.JScrollPane();
         txtId = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtEstado = new javax.swing.JLabel();
-        txtApellido = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JLabel();
-        txtPuesto = new javax.swing.JLabel();
+        lblEstado = new javax.swing.JLabel();
+        lblApellido = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblPuesto = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txtSalario = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JLabel();
+        lblSalario = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
         txtProceso = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -180,8 +180,8 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Ingrese el código a consultar");
 
-        jScrollPane2.setBackground(new java.awt.Color(241, 235, 196));
-        jScrollPane2.setViewportView(txtId);
+        id.setBackground(new java.awt.Color(241, 235, 196));
+        id.setViewportView(txtId);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Apellido:");
@@ -198,25 +198,25 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setText("Id:");
 
-        txtEstado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtEstado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtEstado.setText("...");
-        txtEstado.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblEstado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEstado.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblEstado.setText("...");
+        lblEstado.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtApellido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtApellido.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtApellido.setText("...");
-        txtApellido.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblApellido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblApellido.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblApellido.setText("...");
+        lblApellido.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtNombre.setText("...");
-        txtNombre.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblNombre.setText("...");
+        lblNombre.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtPuesto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtPuesto.setText("...");
-        txtPuesto.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblPuesto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPuesto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblPuesto.setText("...");
+        lblPuesto.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         btnBuscar.setBackground(new java.awt.Color(74, 59, 22));
         btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -233,15 +233,15 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Fecna de ingreso;");
 
-        txtSalario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtSalario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtSalario.setText("...");
-        txtSalario.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblSalario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblSalario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblSalario.setText("...");
+        lblSalario.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        txtFecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtFecha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        txtFecha.setText("...");
-        txtFecha.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        lblFecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblFecha.setText("...");
+        lblFecha.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         txtProceso.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtProceso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -265,34 +265,34 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
                             .addGap(45, 45, 45)
                             .addComponent(jLabel10)
                             .addGap(18, 18, 18)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnBuscar))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(7, 7, 7)
                             .addComponent(jLabel6)
                             .addGap(18, 18, 18)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(8, 8, 8)
                             .addComponent(jLabel5)
                             .addGap(18, 18, 18)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(14, 14, 14)
                             .addComponent(jLabel7)
                             .addGap(12, 12, 12)
-                            .addComponent(txtPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(14, 14, 14)
                             .addComponent(jLabel9)
                             .addGap(18, 18, 18)
-                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(14, 14, 14)
                             .addComponent(jLabel11)
                             .addGap(18, 18, 18)
-                            .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(20, 20, 20)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +300,7 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel8)
                                     .addGap(18, 18, 18)
-                                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(lblEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGap(0, 44, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -316,32 +316,32 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
                     .addGap(17, 17, 17)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel10)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnBuscar))
                     .addGap(12, 12, 12)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel6)
-                        .addComponent(txtNombre))
+                        .addComponent(lblNombre))
                     .addGap(6, 6, 6)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5)
-                        .addComponent(txtApellido))
+                        .addComponent(lblApellido))
                     .addGap(6, 6, 6)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7)
-                        .addComponent(txtPuesto))
+                        .addComponent(lblPuesto))
                     .addGap(6, 6, 6)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel9)
-                        .addComponent(txtSalario))
+                        .addComponent(lblSalario))
                     .addGap(6, 6, 6)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel11)
-                        .addComponent(txtFecha))
+                        .addComponent(lblFecha))
                     .addGap(12, 12, 12)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel8)
-                        .addComponent(txtEstado))
+                        .addComponent(lblEstado))
                     .addGap(36, 36, 36)
                     .addComponent(txtProceso)
                     .addGap(0, 15, Short.MAX_VALUE)))
@@ -384,28 +384,28 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
         try {
             int id = Integer.parseInt(txtId.getText());
             Empleado_Model emp = controller.obtenerEmpleado(id);
-            txtNombre.setText(emp.getNombre());
-            txtApellido.setText(emp.getApellido());
-            txtPuesto.setText(emp.getPuesto());
+            lblNombre.setText(emp.getNombre());
+            lblApellido.setText(emp.getApellido());
+            lblPuesto.setText(emp.getPuesto());
             String Sal = String.valueOf(emp.getSalario());
-            txtSalario.setText(Sal);
+            lblSalario.setText(Sal);
             if(emp.isEstado()==false){
-                txtFecha.setText("Baja");
+                lblFecha.setText("Baja");
             } else{
-                txtFecha.setText("Alta");
+                lblFecha.setText("Alta");
             }
             
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     
             String fecha = sdf.format(emp.getFecha_ingreso());            
-            txtFecha.setText(fecha);
+            lblFecha.setText(fecha);
             if(emp.isEstado()==true){
-                txtEstado.setText("Alta");
+                lblEstado.setText("Alta");
             } else {
-                txtEstado.setText("Baja");
+                lblEstado.setText("Baja");
             }
             
-            if(txtSalario!=null){
+            if(lblSalario!=null){
                 txtProceso.setText("Empleado encontrado");
             } else {
                 txtProceso.setText("Empleado no existente");
@@ -415,41 +415,11 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Informacion_Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Informacion_Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Informacion_Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Informacion_Empleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+    public static void main(String args[]) {
+
+
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Informacion_Empleados().setVisible(true);
@@ -480,6 +450,7 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JScrollPane id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -493,14 +464,13 @@ public class Informacion_Empleados extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel txtApellido;
-    private javax.swing.JLabel txtEstado;
-    private javax.swing.JLabel txtFecha;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblEstado;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPuesto;
+    private javax.swing.JLabel lblSalario;
     private javax.swing.JTextPane txtId;
-    private javax.swing.JLabel txtNombre;
     private javax.swing.JLabel txtProceso;
-    private javax.swing.JLabel txtPuesto;
-    private javax.swing.JLabel txtSalario;
     // End of variables declaration//GEN-END:variables
 }

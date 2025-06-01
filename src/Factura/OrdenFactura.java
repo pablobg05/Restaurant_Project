@@ -21,7 +21,7 @@ public class OrdenFactura {
         this.fechaHora = fechaHora;
     }
 
-    // getters y setters aquí
+
     public int getIdOrden() { return idOrden; }
     public int getNoMesa() { return noMesa; }
     public int getIdReceta() { return idReceta; }

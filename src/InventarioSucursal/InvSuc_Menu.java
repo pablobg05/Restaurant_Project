@@ -244,9 +244,9 @@ public class InvSuc_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ingresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresoMouseClicked
-        panel.removeAll(); // Elimina todos los componentes del panel
-        panel.revalidate(); // Revalida el panel para actualizar el layout
-        panel.repaint(); // Repinta el panel para reflejar los cambios
+        panel.removeAll(); 
+        panel.revalidate(); 
+        panel.repaint(); 
 
         Ingreso_Ingrediente interfaz = new Ingreso_Ingrediente();
         panel.setSize(panel.getWidth(), panel.getHeight());
@@ -257,9 +257,9 @@ public class InvSuc_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ingresoMouseClicked
 
     private void InformacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InformacionMouseClicked
-        panel.removeAll(); // Elimina todos los componentes del panel
-        panel.revalidate(); // Revalida el panel para actualizar el layout
-        panel.repaint(); // Repinta el panel para reflejar los cambios
+        panel.removeAll(); 
+        panel.revalidate(); 
+        panel.repaint(); 
 
         Informacion_Ingredientes_Sucursal interfaz = new Informacion_Ingredientes_Sucursal();
         panel.setSize(panel.getWidth(), panel.getHeight());
@@ -271,9 +271,9 @@ public class InvSuc_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_InformacionMouseClicked
 
     private void añadirStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añadirStockMouseClicked
-        panel.removeAll(); // Elimina componentes anteriores
-        panel.revalidate(); // Revalida layout
-        panel.repaint(); // Redibuja el panel
+        panel.removeAll(); 
+        panel.revalidate(); 
+        panel.repaint(); 
 
         Stock_Ingredientes tabla = new Stock_Ingredientes();
 
@@ -286,45 +286,7 @@ public class InvSuc_Menu extends javax.swing.JFrame {
     
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InvSuc_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InvSuc_Menu().setVisible(true);

@@ -130,7 +130,7 @@ public class InventarioDAOA {
             int compras = 0;
             int id = 0;
             
-            stmt.setInt(1, stock);         // nuevo stock
+            stmt.setInt(1, stock);         
             stmt.setDouble(2, precio);
             stmt.setString(3, descripcion);
             stmt.setInt(4, compras);

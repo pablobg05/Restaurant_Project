@@ -37,13 +37,13 @@ public class GeneradorFacturaPDF {
             PdfWriter.getInstance(document, fos);
             document.open();
 
-            // Título
+
             Font tituloFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18);
             Paragraph titulo = new Paragraph("Factura - Mesa " + noMesa, tituloFont);
             titulo.setAlignment(Element.ALIGN_CENTER);
             document.add(titulo);
 
-            // Fecha
+
             Font fechaFont = FontFactory.getFont(FontFactory.HELVETICA, 12);
             Paragraph fecha = new Paragraph("Fecha: " + new Date().toString(), fechaFont);
             fecha.setAlignment(Element.ALIGN_CENTER);
@@ -51,12 +51,12 @@ public class GeneradorFacturaPDF {
 
             document.add(new Paragraph(" ")); // espacio
 
-            // Tabla con 4 columnas
+
             PdfPTable table = new PdfPTable(4);
             table.setWidthPercentage(100);
             table.setWidths(new float[]{4, 1, 2, 2});
 
-            // Encabezados de la tabla
+
             Font headerFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 12);
             table.addCell(new PdfPCell(new Phrase("Producto", headerFont)));
             table.addCell(new PdfPCell(new Phrase("Cantidad", headerFont)));
@@ -83,7 +83,7 @@ public class GeneradorFacturaPDF {
 
             document.add(new Paragraph(" "));
 
-            // Total
+
             Font totalFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14);
             Paragraph totalParrafo = new Paragraph("TOTAL: Q " + String.format("%.2f", total), totalFont);
             totalParrafo.setAlignment(Element.ALIGN_RIGHT);

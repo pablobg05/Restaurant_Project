@@ -407,11 +407,11 @@ public class Edicion_IngredientesA extends javax.swing.JInternalFrame {
         double precio = Double.parseDouble(txtPrecio.getText());
         String descripcionActual = taDescripcion2.getText();
 
-        // Datos actuales (antes de actualizar)
+
         int stockActual = Integer.parseInt(lblStock.getText());
         double precioActual = Double.parseDouble(lblPrecio.getText());
 
-        // Mostrar mensaje de confirmación antes de actualizar
+
         String mensaje = "¿Está seguro que desea editar completamente este producto?\n\n"
                        + "Stock actual: " + stockActual + "\n"
                        + "Nuevo stock: " + stock + "\n\n"
@@ -424,7 +424,7 @@ public class Edicion_IngredientesA extends javax.swing.JInternalFrame {
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
 
         if (respuesta == JOptionPane.YES_OPTION) {
-            // Crear el producto actual con ID incluido
+
             Inventario_ModelA productoActual = new Inventario_ModelA(id);
             productoActual.setStock(stockActual);
             productoActual.setPrecio(precioActual);

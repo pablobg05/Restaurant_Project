@@ -394,7 +394,7 @@ public class Sucursal_List extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try{
 
-                if(txtId.getText().trim().isEmpty()){ //Esto significa que el id no se seleccionó
+                if(txtId.getText().trim().isEmpty()){ 
                     lblProceso.setText("Id no seleccionado");
                 } else {
                     int id = Integer.parseInt(txtId.getText());

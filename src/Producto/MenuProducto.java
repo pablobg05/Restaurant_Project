@@ -168,9 +168,9 @@ public class MenuProducto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        panel.removeAll(); // Elimina todos los componentes del panel
-        panel.revalidate(); // Revalida el panel para actualizar el layout
-        panel.repaint(); // Repinta el panel para reflejar los cambios
+        panel.removeAll(); 
+        panel.revalidate(); 
+        panel.repaint();
 
         Edicion_Producto interfaz = new Edicion_Producto();
         panel.setSize(panel.getWidth(), panel.getHeight());
@@ -180,26 +180,26 @@ public class MenuProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTablaActionPerformed
-        panel.removeAll(); // Elimina componentes anteriores
-        panel.revalidate(); // Revalida layout
-        panel.repaint(); // Redibuja el panel
+        panel.removeAll(); 
+        panel.revalidate(); 
+        panel.repaint(); 
 
         Informacion_Productos tabla = new Informacion_Productos();
 
         panel.add(tabla);
-        tabla.show(true); // Mucho mejor que .show(), que está obsoleto
+        tabla.show(true); 
         tabla.setLocation(0, 0);
     }//GEN-LAST:event_btnTablaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        panel.removeAll(); // Elimina componentes anteriores
-        panel.revalidate(); // Revalida layout
-        panel.repaint(); // Redibuja el panel
+        panel.removeAll(); 
+        panel.revalidate(); 
+        panel.repaint(); 
 
         Ingreso_Producto interfaz = new Ingreso_Producto();
 
         panel.add(interfaz);
-        interfaz.show(true); // Mucho mejor que .show(), que está obsoleto
+        interfaz.show(true); 
         interfaz.setLocation(100, 0);
     }//GEN-LAST:event_jButton2ActionPerformed
 

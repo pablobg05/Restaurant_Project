@@ -540,11 +540,11 @@ public class Stock_Ingredientes extends javax.swing.JInternalFrame {
 
             int id = Integer.parseInt(ID);
 
-            // Obtener el stock actual antes de continuar
+
             int stockActual = controller.getStockById(id); 
             int nuevoStock = stockActual + cantidad;
 
-            // Mensaje con la suma incluida
+
             String mensaje = "El stock actual es: " + stockActual + "\n"
                            + "Cantidad a añadir: " + cantidad + "\n"
                            + "Nuevo stock total será: " + nuevoStock + "\n\n"
